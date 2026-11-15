@@ -1,4 +1,12 @@
 {
+  "inventory-1115": {
+    "minValid": 1.0,
+    "defaultDates": ["S2B_42TYK_20240904_0_L2A", "S2B_42TYK_20240914_0_L2A"],
+    "scenes": {
+      "S2B_42TYK_20240904_0_L2A": "The RGB image shows a wider continuous water body. The measured outline excludes the separate lake to the west.",
+      "S2B_42TYK_20240914_0_L2A": "The RGB image shows a retreat of the water margin, particularly along the southern arm. The combined lake and shoreline footprint is usable on both dates."
+    }
+  },
   "petrov": {
     "defaultDates": ["S2A_44TKM_20200716_3_L2A", "S2A_44TKM_20260727_0_L2A"],
     "scenes": {
@@ -14,22 +22,6 @@
       "S2B_44TKM_20170727_0_L2A": "The visible connected lake is retained with a coverage limitation. Local masking leaves part of the lake and shoreline check unobserved.",
       "S2B_43TGH_20240809_0_L2A": "Coverage-limited estimate. The visible lake outline agrees with the RGB image. Unobserved pixels widen its sensitivity range.",
       "S2B_43TGH_20260829_0_L2A": "Coverage-limited estimate. The connected outline is visible in RGB and adjacent areas outside coverage are masked."
-    }
-  },
-  "adygine2": {
-    "defaultDates": ["S2A_43TDH_20240820_0_L2A", "S2C_43TDH_20260817_0_L2A"],
-    "scenes": {
-      "S2A_43TDH_20240820_0_L2A": "The outline agrees with the visible basin and the independent field and inventory footprint. The 20 m SWIR band mixes some shoreline pixels.",
-      "S2B_43TDH_20250810_0_L2A": "Visually reviewed. Shoreline mixtures and the resampled SWIR band limit sensitivity on this small lake.",
-      "S2C_43TDH_20260817_0_L2A": "Visually reviewed against RGB and the documented Lake 2 basin. Most of the confirmed boundary is stable across tested thresholds."
-    }
-  },
-  "adygine3": {
-    "defaultDates": ["S2A_43TDH_20240827_0_L2A", "S2B_43TDH_20260914_0_L2A"],
-    "scenes": {
-      "S2A_43TDH_20240827_0_L2A": "Visually reviewed. The index-derived extent follows the separate glacier-contact basin on the field map.",
-      "S2B_43TDH_20250830_0_L2A": "RGB confirms the connected lake. The small basin and mixed edge pixels limit precision.",
-      "S2B_43TDH_20260914_0_L2A": "Visually reviewed. Pixels excluded near the shore are represented in the upper sensitivity bound."
     }
   }
 }

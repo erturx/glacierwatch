@@ -1,6 +1,6 @@
 # Lake selection
 
-The public inventory contains four Kyrgyz lakes with retrievable data, recognisable boundaries, a reviewed seasonal pair and transparent quality limits. The candidate file records the three primary lakes and ten reserves. Geographic screening was followed by selective pixel tests. Coordinates for historical short-lived lakes remain restricted to research records when their exact modern basin identity is unresolved.
+The public inventory contains three Kyrgyz lakes. The Batken basin has a verified before-and-after pair. Petrov Lake and Lake Ala-Kol have separately browsable observations. The candidate file also records the reserves from the original screening.
 
 | Candidate | Screening outcome |
 | --- | --- |
@@ -13,6 +13,22 @@ The public inventory contains four Kyrgyz lakes with retrievable data, recognisa
 | Aksay englacial lake | Published coordinates and catalog hits exist. Its historical englacial pool is distinct from adjacent Uchitel. No reviewed contemporary pair was established. [Ala-Archa field study](https://doi.org/10.5194/nhess-26-733-2026) |
 | Lake Ala-Kol | Selected with a shoreline coverage limitation. RGB and spectral inspection support the mapped open-water body. Incomplete cells are visible and propagated into every estimate. [Lake sediment study](https://doi.org/10.1016/j.palaeo.2020.109987) |
 | Kashkasuu, Jeruy, Karateke | Documented short-lived lakes. The published events have peak areas of order 0.02–0.04 km². The project did not resolve sufficient dates and lake geometry for these historical basins to enter the viewer. [Field and satellite study](https://doi.org/10.5194/nhess-18-983-2018) |
-| Adygine Lake 2 and Lake 3 | Selected. The separate middle and upper glacier-contact basins match the field map and inventory. Clear summer optical data support both. [Field measurements and lake map](https://doi.org/10.5194/esurf-7-301-2019) |
+| Adygine Lake 2 and Lake 3 | Reviewed in the original inventory. Lake 2 had 100% usable coverage in each published scene, with mapped areas of 0.0333–0.0343 km². Lake 3 had approximately 99.1% coverage and mapped areas of 0.0260–0.0263 km². For each lake, the sensitivity ranges overlap across dates. Both were replaced in the public MVP by the single Batken case. [Field measurements and lake map](https://doi.org/10.5194/esurf-7-301-2019) |
 
 The 2024 inventory geometry is used to review identity and location. Its published polygon areas serve as context because they come from a different mapping workflow and acquisition set.
+
+## Follow-up screening for visible lake shrinkage
+
+The interactive comparison now requires complete usable coverage and a substantial reduction outside the tested sensitivity ranges. The prior screen recorded suitability for estimating open-water area on individual dates.
+
+| Candidate | Follow-up evidence |
+| --- | --- |
+| Western Zyndan | Screened 45 Sentinel-2 catalogue items from 15 June to 1 October 2024 around the updated location in the published case study (41.946° N, 77.024° E). The checked before-and-after window did not yield a pair with full usable coverage. [Event study](https://doi.org/10.25598/agit/2026-22) |
+| Takyr-Tor | Located using the published coordinates (42.572° N, 74.816° E). Screened 31 catalogue items spanning the 27 June 2025 outburst. The 23 July chip had 99.1% eligible support in the initial shoreline screen. The 21 June candidate had incomplete support at the locator. Several archive reads failed, so those scenes remain unverified. [Event study](https://doi.org/10.25598/agit/2026-22) |
+| Lower Merzbacher | Screened 58 catalogue items from 5 June to 15 August 2024 around the documented July drainage. Candidate chips did not meet complete usable coverage in the screening locator. [2024 study](https://icfm10.com/proceedings/papers/papers_numbered/ch1.2_2.pdf) |
+| Toguz-Bulak | Screened 26 items around the 8 August 2019 outburst at the location estimated from the published map. The 11 August chip had 90.7% eligible support in the initial locator check. The field study independently reports an area decrease from 0.021 to 0.002 km². [Field study and basin map](https://doi.org/10.3390/geosciences10110468) |
+| Korumdu | Screened catalogue items around the approximate location from the published basin map for the 2017 and 2019 drainage seasons. Full usable coverage remains unverified for a pair. The field study documents a 17-day drainage period in August 2017. [Field study](https://doi.org/10.5194/nhess-21-2245-2021) |
+
+The nationwide shortlist matched the published 2016 and 2024 polygons by spatial overlap. It retained 17 candidates with earlier areas of at least 0.025 km², later areas between 12% and 65% of the earlier footprint, and at least 65% of the later polygon overlapping the earlier one. Each earlier polygon intersected at most two later polygons. We checked 394 Sentinel-2 chips across July–September 2016, 2017, 2023 and 2024, using up to eight items per query ranked by tile-wide cloud coverage, then testing local scene-classification pixels. Sixteen chips qualified for multispectral classification after this screen. The inventory footprint changes guided the search. The published comparison uses fresh, same-method Sentinel-2 measurements. [Glacial lakes of Kyrgyzstan](https://doi.org/10.5281/zenodo.17869915)
+
+The selected Batken lake is an unnamed glacier-detached basin at 39.71085° N, 71.88079° E (2024 zero-based shapefile record 1115, 2016 record 1629). The 4 and 14 September 2024 Sentinel-2B observations have complete usable coverage across all 322 cells in the combined outline and its three-pixel shoreline buffer. The primary tile mapped 0.0135 and 0.0078 km² of open water. An overlapping tile from the same acquisitions gave 0.0138 and 0.0082 km². See the [quality report](quality-report.md) and [source granules](data-sources.md).

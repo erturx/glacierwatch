@@ -10,7 +10,7 @@ from catalog import ROOT, load_json, save_json
 SOURCE = ROOT / ".cache" / "inventory"
 ZENODO = "https://zenodo.org/api/records/17869915/files"
 NATURAL_EARTH = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson"
-RECORDS = {"petrov": 2216, "uchitel": 487, "alakol": 702, "adygine2": 2, "adygine3": 2093}
+RECORDS = {"petrov": 2216, "uchitel": 487, "alakol": 702, "adygine2": 2, "adygine3": 2093, "inventory-1115": 1115}
 
 
 def download(url, path):
@@ -23,16 +23,22 @@ def download(url, path):
     return path
 
 
-def main():
-    SOURCE.mkdir(parents=True, exist_ok=True)
-    stem = "Glacial_lakes_KYRG_2024"
+def lake_inventory(year):
+    stem = f"Glacial_lakes_KYRG_{year}"
     for suffix in ("shp", "shx", "dbf", "prj", "cpg"):
         name = f"{stem}.{suffix}"
         download(f"{ZENODO}/{name}/content", SOURCE / name)
-    crs = CRS.from_wkt((SOURCE / f"{stem}.prj").read_text())
+    return SOURCE / f"{stem}.shp"
+
+
+def main():
+    SOURCE.mkdir(parents=True, exist_ok=True)
+    latest = lake_inventory(2024)
+    previous = lake_inventory(2016)
+    crs = CRS.from_wkt(latest.with_suffix(".prj").read_text())
     wgs = Transformer.from_crs(crs, 4326, always_xy=True).transform
     refs = {}
-    with shapefile.Reader(str(SOURCE / f"{stem}.shp")) as records:
+    with shapefile.Reader(str(latest)) as records:
         for lake, index in RECORDS.items():
             geometry = shape(records.shapeRecord(index).shape.__geo_interface__)
             refs[lake] = {
@@ -40,6 +46,13 @@ def main():
                 "areaKm2": round(geometry.area / 1e6, 5),
                 "geometry": mapping(transform(wgs, geometry.simplify(4, preserve_topology=True))),
             }
+        prior_index = 1629
+        with shapefile.Reader(str(previous)) as old_records:
+            prior = shape(old_records.shape(prior_index).__geo_interface__).buffer(0)
+        recent = shape(records.shape(RECORDS["inventory-1115"]).__geo_interface__).buffer(0)
+        locator = prior.union(recent).buffer(20).simplify(4, preserve_topology=True)
+        refs["inventory-1115"]["previousRecord"] = prior_index
+        refs["inventory-1115"]["locator"] = mapping(transform(wgs, locator))
     save_json(ROOT / "pipeline" / "reference-geometries.json", refs)
     region = box(67.2, 38.1, 82.1, 45.3)
     features = []

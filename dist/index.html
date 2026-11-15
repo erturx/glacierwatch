@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Compare measured glacial lake shorelines in Kyrgyzstan using satellite observations.">
+  <meta name="description" content="Explore measured glacial lake shorelines in Kyrgyzstan using satellite observations.">
   <meta name="color-scheme" content="dark">
   <title>GlacierWatch | Glacial lake observations</title>
   <link rel="stylesheet" href="styles.css">
@@ -18,9 +18,9 @@
   </header>
   <main class="shell">
     <section class="intro">
-      <p class="overline"><span></span> KYRGYZSTAN · TIAN SHAN</p>
+      <p class="overline"><span></span> KYRGYZSTAN</p>
       <h1>Glacial lake change <em>from orbit.</em></h1>
-      <p>Compare measured shorelines and open-water extent using radar and optical satellite observations.</p>
+      <p>Explore measured open-water extent from radar and optical observations, with field studies of documented lake drainage.</p>
     </section>
     <noscript><p class="notice">Enable JavaScript to explore observations and their sources.</p></noscript>
     <p class="notice" id="loading" role="status">Loading the observation inventory…</p>
@@ -45,24 +45,24 @@
           <div id="series" class="segmented" aria-label="Observation series"></div>
         </div>
         <div class="date-controls">
-          <label><span><i class="dot dot-a"></i> Observation A</span><select id="date-a"></select></label>
-          <label><span><i class="dot dot-b"></i> Observation B</span><select id="date-b"></select></label>
+          <label><span><i class="dot dot-a"></i> <span id="date-a-label">Observation</span></span><select id="date-a"></select></label>
+          <label id="date-b-control" hidden><span><i class="dot dot-b"></i> Observation B</span><select id="date-b"></select></label>
         </div>
         <div class="scene" id="scene">
-          <div class="scene-layer"><img id="image-b" alt=""><img id="overlay-b" class="outline" alt=""></div>
+          <div class="scene-layer" id="scene-b" hidden><img id="image-b" alt=""><img id="overlay-b" class="outline" alt=""></div>
           <div class="scene-layer scene-a" id="scene-a"><img id="image-a" alt=""><img id="overlay-a" class="outline" alt=""></div>
           <div class="scene-label scene-label-a" id="stamp-a"></div>
-          <div class="scene-label scene-label-b" id="stamp-b"></div>
-          <div id="divider" aria-hidden="true"><span>‹ ›</span></div>
+          <div class="scene-label scene-label-b" id="stamp-b" hidden></div>
+          <div id="divider" aria-hidden="true" hidden><span>‹ ›</span></div>
           <div class="north" aria-hidden="true">↑ N</div>
         </div>
-        <div class="figure-controls">
-          <label for="wipe">B only</label><input type="range" id="wipe" min="0" max="100" value="50" aria-label="Proportion of observation A visible"><span>A only</span>
+        <div class="figure-controls" id="figure-controls">
+          <label for="wipe" id="wipe-b-label" hidden>B only</label><input type="range" id="wipe" min="0" max="100" value="50" aria-label="Proportion of observation A visible" hidden><span id="wipe-a-label" hidden>A only</span>
           <label class="outline-toggle"><input type="checkbox" id="outline-toggle" checked> Show outlines</label>
         </div>
         <p class="legend"><span><i class="legend-water"></i> Mapped open water</span><span><i class="legend-unknown"></i> Unobserved or excluded pixels</span><span id="scale-text"></span></p>
-        <dl class="metrics" aria-live="polite">
-          <div><dt>Water at A</dt><dd id="area-a"></dd></div>
+        <dl class="metrics" id="metrics" aria-live="polite">
+          <div><dt id="area-a-label">Open water</dt><dd id="area-a"></dd></div>
           <div><dt>Water at B</dt><dd id="area-b"></dd></div>
           <div><dt>Area change</dt><dd id="area-change"></dd></div>
           <div><dt>Relative change</dt><dd id="relative-change"></dd></div>
@@ -78,11 +78,22 @@
         <hr>
         <h3>How extent is measured</h3>
         <p id="method-description"></p>
-        <p>Areas describe observable open water. Retrieval depends on scene conditions and classification limits. A changed outline alone cannot establish a flood event or predict a future outburst.</p>
+        <p>Comparisons require full coverage of the lake and shoreline on both dates. The mapped decrease must reach 0.005 km². After accounting for threshold sensitivity, the minimum decrease must still reach 20% of the earlier upper estimate.</p>
       </article>
       <article class="panel source-panel">
         <h2>Observation sources</h2>
         <div id="sources"></div>
+      </article>
+    </section>
+    <section class="research" aria-label="Published drainage studies">
+      <article class="panel context-panel">
+        <h2>Published drainage studies</h2>
+        <p>Field and satellite research found that Toguz-Bulak shrank from 0.021 to 0.002 km² during its August 2019 outburst. <a href="https://doi.org/10.3390/geosciences10110468">Toguz-Bulak field study ↗</a></p>
+        <p>Field monitoring documented seasonal drainage at Korumdu. In August 2017 the lake emptied over 17 days. <a href="https://doi.org/10.5194/nhess-21-2245-2021">Korumdu field study ↗</a></p>
+      </article>
+      <article class="panel context-panel">
+        <h2>What a smaller water surface can indicate</h2>
+        <p>A large reduction can prompt a closer look for drainage. The two published cases show that water can leave a lake rapidly during an outburst or gradually through an outlet. Determining what happened requires field evidence and the timing and conditions of the acquisitions.</p>
       </article>
     </section>
   </main>

@@ -49,7 +49,8 @@ class Grid:
         refs = load_json(REFERENCES) if REFERENCES.exists() else {}
         ref = refs.get(lake["id"])
         self.reference = transform_geometry(self.project, shape(ref["geometry"])) if ref else None
-        locator = shape(lake["locator"]) if "locator" in lake else None
+        locator_geometry = lake.get("locator") or (ref or {}).get("locator")
+        locator = shape(locator_geometry) if locator_geometry else None
         if locator is not None:
             self.seed = transform_geometry(self.project, locator)
         else:

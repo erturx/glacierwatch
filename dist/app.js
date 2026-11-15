@@ -121,9 +121,9 @@ async function renderMap() {
   canvas.append(svg('path', {d:polygonPath(lake.extent, project), fill:'#1c3436', stroke:'#637b78', 'stroke-dasharray':'5 4'}));
   label(canvas, 'STUDY AREA', 19, 22);
   label(canvas, '↑ N', 494, 24);
-  $('map-caption').textContent = 'A cyan · B amber · WGS84';
+  $('map-caption').textContent = b ? 'A cyan · B amber · WGS84' : 'Water outline · WGS84';
   try {
-    const outlines = await Promise.all([a,b].map(obs => {
+    const outlines = await Promise.all([a,b].filter(Boolean).map(obs => {
       const path = obs.files.boundary;
       if (!boundaries.has(path)) boundaries.set(path, requestJson(path).catch(error => {
         boundaries.delete(path);
@@ -132,7 +132,7 @@ async function renderMap() {
       return boundaries.get(path);
     }));
     if (thisRender !== mapRender) return;
-    [1, 0].forEach(i => {
+    (b ? [1, 0] : [0]).forEach(i => {
       for (const feature of outlines[i].features) {
         canvas.append(svg('path', {d:polygonPath(feature.geometry, project), class:i ? 'map-water secondary' : 'map-water', 'fill-rule':'evenodd'}));
       }
@@ -177,7 +177,8 @@ function chooseLake(id) {
 
 function chooseSeries(entry) {
   series = entry;
-  [dateA, dateB] = entry.defaultDates;
+  const preferred = entry.comparisons.find(([a,b]) => a === entry.defaultDates[0] && b === entry.defaultDates[1]);
+  [dateA, dateB] = preferred ?? entry.comparisons[0] ?? [entry.observations.at(-1).id, null];
   for (const button of $('series').querySelectorAll('button')) {
     button.setAttribute('aria-pressed', String(button.dataset.series === entry.key));
   }
@@ -249,32 +250,41 @@ function sourceBox(observation, tag, precision) {
 
 function renderComparison() {
   const list = series.observations;
-  const aIndex = list.findIndex(obs => obs.id === dateA);
-  if (list.findIndex(obs => obs.id === dateB) <= aIndex) dateB = list.at(-1).id;
-  options($('date-a'), list.slice(0, -1), dateA);
-  options($('date-b'), list.slice(aIndex + 1), dateB);
+  const compared = series.comparisons.length > 0;
+  const availableA = compared ? list.filter(obs => series.comparisons.some(([id]) => id === obs.id)) : list;
+  const allowedB = series.comparisons.filter(([a]) => a === dateA).map(([, b]) => b);
+  if (!allowedB.includes(dateB)) dateB = allowedB[0] ?? null;
+  options($('date-a'), availableA, dateA);
+  options($('date-b'), list.filter(obs => allowedB.includes(obs.id)), dateB);
+  for (const id of ['date-b-control', 'scene-b', 'stamp-b', 'divider', 'wipe', 'wipe-a-label', 'wipe-b-label']) {
+    $(id).hidden = !compared;
+  }
+  for (const id of ['area-b', 'area-change', 'relative-change']) $(id).parentElement.hidden = !compared;
+  for (const id of ['scene', 'metrics', 'figure-controls']) $(id).classList.toggle('single', !compared);
+  $('date-a-label').textContent = compared ? 'Observation A' : 'Observation date';
+  $('area-a-label').textContent = compared ? 'Water at A' : 'Open water';
   const [a,b] = pair();
   for (const [key, obs] of [['a', a], ['b', b]]) {
+    if (!obs) continue;
     $(`image-${key}`).src = obs.files.image;
     $(`image-${key}`).alt = `${lake.name} on ${formattedDate(obs.datetime)}, ${obs.satellite}`;
     $(`overlay-${key}`).src = obs.files.overlay;
-    $(`stamp-${key}`).textContent = `${key.toUpperCase()} · ${formattedDate(obs.datetime)}`;
+    $(`stamp-${key}`).textContent = `${compared ? key.toUpperCase() + ' · ' : ''}${formattedDate(obs.datetime)}`;
   }
-  const delta = b.areaKm2 - a.areaKm2;
-  const digits = Math.max(a.areaKm2, b.areaKm2) < .1 ? 3 : 2;
+  const digits = Math.max(a.areaKm2, b?.areaKm2 ?? 0) < .1 ? 4 : 2;
   metric('area-a', formatArea(a.areaKm2, false, digits), 'km²');
-  metric('area-b', formatArea(b.areaKm2, false, digits), 'km²');
-  metric('area-change', formatArea(delta, true, digits), 'km²');
-  metric('relative-change', a.areaKm2 ? formatArea(100 * delta / a.areaKm2, true, 1) : '—', a.areaKm2 ? '%' : '');
-  const interval = Math.round((Date.parse(b.datetime) - Date.parse(a.datetime)) / 86_400_000);
-  const overlap = a.quality.lowKm2 <= b.quality.highKm2 && b.quality.lowKm2 <= a.quality.highKm2;
-  const coverageLimited = Math.min(a.quality.validFraction, b.quality.validFraction) < .95;
-  const seasonA = Date.parse(`2000-${a.datetime.slice(5,10)}`);
-  const seasonB = Date.parse(`2000-${b.datetime.slice(5,10)}`);
-  const seasonal = Math.abs(seasonB - seasonA) / 86_400_000 > 21;
-  $('quality').textContent = `${interval} days between scenes. ${overlap
-    ? 'The sensitivity ranges overlap. The measured difference is unresolved.'
-    : 'The estimates are separated under the tested thresholds. Conditions at the shoreline can still influence the difference.'}${coverageLimited ? ' Some shoreline pixels were excluded. See coverage and sensitivity for each date.' : ''}${seasonal ? ' Acquisition dates are more than three weeks apart within the summer season.' : ''}`;
+  if (b) {
+    const delta = b.areaKm2 - a.areaKm2;
+    metric('area-b', formatArea(b.areaKm2, false, digits), 'km²');
+    metric('area-change', formatArea(delta, true, digits), 'km²');
+    metric('relative-change', formatArea(100 * delta / a.areaKm2, true, 1), '%');
+    const interval = Math.round((Date.parse(b.datetime) - Date.parse(a.datetime)) / 86_400_000);
+    const seasonGap = Math.abs(Date.parse(`2000-${b.datetime.slice(5,10)}`) - Date.parse(`2000-${a.datetime.slice(5,10)}`));
+    $('quality').textContent = `${interval} days between scenes. Both observations have full coverage of the reviewed lake and shoreline. The decrease exceeds the tested sensitivity range.${seasonGap > 21 * 86_400_000 ? ' Seasonal conditions can affect the comparison.' : ''}`;
+  } else {
+    const coverage = (a.quality.validFraction * 100).toFixed(1);
+    $('quality').textContent = `${coverage}% usable coverage of the reviewed lake and shoreline. No pair in this series met the full-coverage and substantial-decrease criteria.`;
+  }
   $('scale-text').textContent = `${a.grid.pixelMetres} m analysis grid`;
   const method = $('method-description');
   const link = document.createElement('a');
@@ -283,9 +293,10 @@ function renderComparison() {
   link.target = '_blank';
   link.rel = 'noopener';
   method.replaceChildren(document.createTextNode(series.key === 'radar'
-    ? 'Frequency A HH backscatter from two same-track NISAR scenes. Invalid subswaths and low-look pixels are excluded. Radar shadow, rough water and ice can alter the signal. '
+    ? 'Frequency A HH backscatter from same-track NISAR observations. Invalid subswaths and low-look pixels are excluded. Radar shadow, rough water and ice can alter the signal. '
     : 'Sentinel-2 reflectance indices identify connected water within each lake basin. Scene classification excludes cloud, shadow, snow, unclassified and missing pixels. The 20 m SWIR band is resampled onto the 10 m grid. '), link);
-  $('sources').replaceChildren(sourceBox(a, 'Observation A', digits), sourceBox(b, 'Observation B', digits));
+  $('sources').replaceChildren(sourceBox(a, b ? 'Observation A' : 'Observation', digits));
+  if (b) $('sources').append(sourceBox(b, 'Observation B', digits));
   $('map').setAttribute('aria-label', 'Interactive map of Kyrgyzstan');
   renderMap();
 }
@@ -306,7 +317,7 @@ try {
   const [inventory, geography] = await Promise.all([requestJson('data/inventory.json'), requestJson('data/region.geojson')]);
   lakes = inventory.lakes;
   borders = geography;
-  if (!lakes.length) throw new Error('No reviewed observation pairs');
+  if (!lakes.length) throw new Error('No reviewed observations');
   for (const entry of lakes) {
     const button = document.createElement('button');
     button.type = 'button';

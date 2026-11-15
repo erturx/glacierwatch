@@ -12,8 +12,8 @@ from shapely.geometry import Point, shape
 from shapely.ops import transform
 
 from catalog import ROOT, load_json
-from inventory import verify_pair
-from optical import OUT
+from inventory import reviewed_reductions, verify_pair
+from optical import ACCEPTED, OUT
 
 
 def verify_observation(obs):
@@ -71,8 +71,9 @@ def main():
             assert all(o["lake"] == lake["id"] for o in observations)
             grids = {verify_observation(obs) for obs in observations}
             assert len(grids) == 1, f'Images in {lake["id"]}/{series["key"]} are misaligned'
+            assert series["comparisons"] == reviewed_reductions(observations)
             count += len(observations)
-    assert len(lake_ids) == 4
+    assert lake_ids and lake_ids == set(load_json(ACCEPTED))
     print(f"PASS: {len(lake_ids)} Kyrgyz lake locations, {count} observation masks, boundaries, image pairs and provenance records")
 
 

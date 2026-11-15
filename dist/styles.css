@@ -76,6 +76,8 @@ select { min-height: 38px; width: 100%; padding: 5px 9px; border: 1px solid #476
 .scene-layer, .scene-layer img { position: absolute; inset: 0; width: 100%; height: 100%; }
 .scene-layer img { object-fit: cover; }
 .scene-a { clip-path: inset(0 calc(100% - var(--compare)) 0 0); }
+.scene.single .scene-a { clip-path: none; }
+.figure-controls.single, .metrics.single { grid-template-columns: 1fr; }
 .scene-label { position: absolute; top: 10px; padding: 5px 8px; background: #111c1eea; border: 1px solid #c2e9d96b; border-radius: 5px; font: 12px/1.2 Consolas, monospace; color: #e6ffff; }
 .scene-label-a { left: 10px; }
 .scene-label-b { right: 10px; border-color: #e9d69f90; color: #fff0be; }

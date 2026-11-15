@@ -1,0 +1,153 @@
+{
+  "id": "inventory-1115",
+  "name": "Batken Glacial Lake",
+  "region": "Batken Region",
+  "lon": 71.88078875712107,
+  "lat": 39.71084643250505,
+  "radius": 350,
+  "buffer": 130,
+  "rank": "reserve",
+  "reference": "https://doi.org/10.5281/zenodo.17869915",
+  "context": "An unnamed glacier-detached lake in the Kyrgyz glacial-lake inventory (2024 record 1115). Its open-water area fell over ten days in September 2024. Partial drainage is a possible explanation that needs independent evidence.",
+  "extent": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          71.88477329707149,
+          39.70756510060932
+        ],
+        [
+          71.88503964578655,
+          39.713954253929124
+        ],
+        [
+          71.87676684385795,
+          39.71415969666109
+        ],
+        [
+          71.87650125632105,
+          39.70777049703798
+        ],
+        [
+          71.88477329707149,
+          39.70756510060932
+        ]
+      ]
+    ]
+  },
+  "defaultDates": [
+    "S2B_42TYK_20240904_0_L2A",
+    "S2B_42TYK_20240914_0_L2A"
+  ],
+  "observations": [
+    {
+      "id": "S2B_42TYK_20240904_0_L2A",
+      "lake": "inventory-1115",
+      "datetime": "2024-09-04T06:08:04.451000Z",
+      "provider": "ESA / Copernicus via Element 84 Earth Search",
+      "satellite": "Sentinel-2B",
+      "instrument": "MSI",
+      "product": "Sentinel-2 L2A surface reflectance",
+      "collection": "sentinel-2-l2a",
+      "granule": "S2B_OPER_MSI_L2A_TL_2BPS_20240904T102550_A039156_T42TYK_N05.11",
+      "safeProduct": "S2B_MSIL2A_20240904T055639_N0511_R091_T42TYK_20240904T102550.SAFE",
+      "baseline": "05.11",
+      "boaOffsetApplied": true,
+      "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_42TYK_20240904_0_L2A",
+      "inputs": {
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/42/T/YK/2024/9/S2B_42TYK_20240904_0_L2A/SCL.tif",
+        "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/42/T/YK/2024/9/S2B_42TYK_20240904_0_L2A/B03.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/42/T/YK/2024/9/S2B_42TYK_20240904_0_L2A/B08.tif",
+        "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/42/T/YK/2024/9/S2B_42TYK_20240904_0_L2A/B11.tif",
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/42/T/YK/2024/9/S2B_42TYK_20240904_0_L2A/B04.tif",
+        "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/42/T/YK/2024/9/S2B_42TYK_20240904_0_L2A/B02.tif"
+      },
+      "areaKm2": 0.0135,
+      "quality": {
+        "waterPixels": 135,
+        "validFraction": 1.0,
+        "unknownKm2": 0.0,
+        "lowKm2": 0.0122,
+        "highKm2": 0.0143,
+        "sclWaterPixels": 88,
+        "sclOverlap": 0.6444,
+        "touchesBasinEdge": false,
+        "review": "The RGB image shows a wider continuous water body. The measured outline excludes the separate lake to the west.",
+        "status": "Reviewed"
+      },
+      "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+      "grid": {
+        "crs": "EPSG:32642",
+        "bounds": [
+          746600,
+          4399280,
+          747310,
+          4399990
+        ],
+        "size": 71,
+        "pixelMetres": 10
+      },
+      "files": {
+        "image": "data/inventory-1115/S2B_42TYK_20240904_0_L2A.webp",
+        "overlay": "data/inventory-1115/S2B_42TYK_20240904_0_L2A.png",
+        "boundary": "data/inventory-1115/S2B_42TYK_20240904_0_L2A.geojson",
+        "mask": "data/inventory-1115/S2B_42TYK_20240904_0_L2A.tif"
+      }
+    },
+    {
+      "id": "S2B_42TYK_20240914_0_L2A",
+      "lake": "inventory-1115",
+      "datetime": "2024-09-14T06:08:01.464000Z",
+      "provider": "ESA / Copernicus via Element 84 Earth Search",
+      "satellite": "Sentinel-2B",
+      "instrument": "MSI",
+      "product": "Sentinel-2 L2A surface reflectance",
+      "collection": "sentinel-2-l2a",
+      "granule": "S2B_OPER_MSI_L2A_TL_2BPS_20240914T081925_A039299_T42TYK_N05.11",
+      "safeProduct": "S2B_MSIL2A_20240914T055639_N0511_R091_T42TYK_20240914T081925.SAFE",
+      "baseline": "05.11",
+      "boaOffsetApplied": true,
+      "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_42TYK_20240914_0_L2A",
+      "inputs": {
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/42/T/YK/2024/9/S2B_42TYK_20240914_0_L2A/SCL.tif",
+        "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/42/T/YK/2024/9/S2B_42TYK_20240914_0_L2A/B03.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/42/T/YK/2024/9/S2B_42TYK_20240914_0_L2A/B08.tif",
+        "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/42/T/YK/2024/9/S2B_42TYK_20240914_0_L2A/B11.tif",
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/42/T/YK/2024/9/S2B_42TYK_20240914_0_L2A/B04.tif",
+        "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/42/T/YK/2024/9/S2B_42TYK_20240914_0_L2A/B02.tif"
+      },
+      "areaKm2": 0.0078,
+      "quality": {
+        "waterPixels": 78,
+        "validFraction": 1.0,
+        "unknownKm2": 0.0,
+        "lowKm2": 0.0036,
+        "highKm2": 0.0087,
+        "sclWaterPixels": 36,
+        "sclOverlap": 0.4615,
+        "touchesBasinEdge": false,
+        "review": "The RGB image shows a retreat of the water margin, particularly along the southern arm. The combined lake and shoreline footprint is usable on both dates.",
+        "status": "Reviewed"
+      },
+      "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+      "grid": {
+        "crs": "EPSG:32642",
+        "bounds": [
+          746600,
+          4399280,
+          747310,
+          4399990
+        ],
+        "size": 71,
+        "pixelMetres": 10
+      },
+      "files": {
+        "image": "data/inventory-1115/S2B_42TYK_20240914_0_L2A.webp",
+        "overlay": "data/inventory-1115/S2B_42TYK_20240914_0_L2A.png",
+        "boundary": "data/inventory-1115/S2B_42TYK_20240914_0_L2A.geojson",
+        "mask": "data/inventory-1115/S2B_42TYK_20240914_0_L2A.tif"
+      }
+    }
+  ]
+}

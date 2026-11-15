@@ -1,4 +1,10 @@
 """Assemble the web inventory from reviewed and exported observations."""
+from itertools import combinations
+
+import numpy as np
+import rasterio
+from scipy.ndimage import binary_dilation
+
 from catalog import load_json, save_json
 from optical import OUT, ACCEPTED
 
@@ -12,6 +18,26 @@ def verify_pair(series):
         for file in obs["files"].values():
             if not (OUT.parent / file).is_file():
                 raise FileNotFoundError(file)
+
+
+def reviewed_reductions(observations):
+    pairs = []
+    for before, after in combinations(observations, 2):
+        a, b = before["quality"], after["quality"]
+        if any(q["validFraction"] != 1 or q["unknownKm2"] != 0 for q in (a, b)):
+            continue
+        minimum_loss = a["lowKm2"] - b["highKm2"]
+        if before["areaKm2"] - after["areaKm2"] < .005 or minimum_loss < .20 * a["highKm2"]:
+            continue
+        with rasterio.open(OUT.parent / before["files"]["mask"]) as src_a, \
+             rasterio.open(OUT.parent / after["files"]["mask"]) as src_b:
+            if (src_a.crs, src_a.transform, src_a.shape) != (src_b.crs, src_b.transform, src_b.shape):
+                continue
+            mask_a, mask_b = src_a.read(1, masked=True), src_b.read(1, masked=True)
+        shoreline = binary_dilation((mask_a.filled(0) == 1) | (mask_b.filled(0) == 1), iterations=3)
+        if not (np.ma.getmaskarray(mask_a) | np.ma.getmaskarray(mask_b))[shoreline].any():
+            pairs.append([before["id"], after["id"]])
+    return pairs
 
 
 def main():
@@ -35,7 +61,9 @@ def main():
                 })
         for entry in data["series"]:
             verify_pair(entry)
+            entry["comparisons"] = reviewed_reductions(entry["observations"])
         lakes.append(data)
+    lakes.sort(key=lambda lake: not any(series["comparisons"] for series in lake["series"]))
     save_json(OUT / "inventory.json", {"lakes": lakes})
 
 

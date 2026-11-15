@@ -8,7 +8,7 @@ Every row below contributes to the public measurements or their checks. Timestam
 
 - **NASA–ISRO NISAR L-band SAR**, NASA / ASF DAAC, Geocoded Polarimetric Covariance L2. The two public observations use version 1 PROVISIONAL, CRID P05023, Frequency A HH × HH, and nominal 20 m posting. Their views and numerical areas come from those rasters. The native subsetting boxes, job IDs, filenames and SHA-256 hashes are in [the inventory](../dist/data/inventory.json). The included cutouts preserve the source GeoTIFFs and metadata. [ASF GCOV documentation](https://nisar-docs.asf.alaska.edu/gcov/) · [NASA collection DOI](https://doi.org/10.5067/NIL2GCOV-P1)
 - **ESA / Copernicus Sentinel-2 A/B/C MSI**, Level-2A bottom-of-atmosphere surface reflectance from Element 84 Earth Search `sentinel-2-l2a`. B02, B03, B04, B08 and B11 and the SCL quality layer provide backgrounds, numerical optical extent and cross-sensor checks. Raster URLs and BOA metadata are recorded in the inventory. Some Earth Search items expose a full SAFE product identifier in place of a tile-granule identifier. [Sentinel-2 Level-2A](https://sentiwiki.copernicus.eu/web/s2-products) · [Earth Search](https://github.com/Element84/earth-search)
-- **Glacial lakes of Kyrgyzstan (2016 & 2024)**, Piroton, Emmer and Havenith. Published 2024 geometries locate basin seeds and support identity checks. See the attributed source and row identifiers in [reference geometries](../pipeline/reference-geometries.json). [Zenodo](https://doi.org/10.5281/zenodo.17869915)
+- **Glacial lakes of Kyrgyzstan (2016 & 2024)**, Piroton, Emmer and Havenith. Published geometries locate basin seeds and support identity checks. See the attributed source and row identifiers in [reference geometries](../pipeline/reference-geometries.json). [Zenodo](https://doi.org/10.5281/zenodo.17869915)
 - **Natural Earth**, 1:50m admin-0 country boundaries, for geographic context. Public-domain data. [Natural Earth terms](https://www.naturalearthdata.com/about/terms-of-use/)
 - For independently published lake history, see [lake selection](lake-selection.md).
 
@@ -76,7 +76,7 @@ def main():
     flags.extend([
         "", "## Interpretation", "",
         "- NISAR's 17 August and 10 September Petrov extents differ by approximately −0.06 km². Both are compatible within the tested sensitivity ranges. Approximate shared-pixel optical agreement is 81% and 89%. Independent reference dates differ by three and eight days.",
-        "- Full-quality comparison requires at least 95% eligible support in the lake/shore check and a water component that stays inside the study basin. For Ala-Kol, the reviewed coverage-limited tier allows at least 90% eligible support. Its contiguous outline is visible on RGB and unknown pixels contribute to the upper sensitivity bound. The result remains informative as observable area, with all default changes unresolved.",
+        "- The before-and-after viewer requires 100% eligible coverage on both dates and over the combined water outline plus its shoreline buffer. The nominal decrease must reach 0.005 km² and the conservative decrease must reach 20% of the earlier upper estimate.",
         "- The 10 m optical mask inherits 20 m SWIR and SCL limitations. Refer to the individual scene records for sensor availability and edge notes.",
     ])
     write("data-sources.md", ledger)

@@ -1,10 +1,12 @@
 # Scientific method
 
+The viewer compares only pairs on the same analysis grid with 100% eligible pixels in the individual lake and shoreline checks and in the union of both mapped outlines plus a three-pixel shoreline buffer. The nominal decrease must reach 0.005 km². The difference between the earlier lower sensitivity bound and the later upper bound must reach 20% of the earlier upper bound. These display thresholds screen out small changes. For other series, the viewer presents the observations one date at a time.
+
 ## Observation discovery and geometry
 
 `pipeline/catalog.py` queries ASF Search for NISAR GCOV and Element 84 Earth Search for Sentinel-2 L2A. It searches a point on the identified lake. Footprints only establish candidates. Lake and shore pixels are tested in raster subsets before export. When the catalog returns more than a page of items, the search follows the catalog's next link.
 
-The analysis uses documented study points, WGS84 and a metric UTM grid. Published basin outlines from Piroton, Emmer and Havenith inform which connected water body belongs to each lake. The basin search extends beyond the source inventory outline. A detected component reaching the study boundary fails the final quality gate. The two Adygine lakes occupy separate basins and use separately checked reference footprints. [Glacial lakes of Kyrgyzstan](https://doi.org/10.5281/zenodo.17869915) · [Adygine field study](https://doi.org/10.5194/esurf-7-301-2019)
+The analysis uses documented study points, WGS84 and a metric UTM grid. Published basin outlines from Piroton, Emmer and Havenith inform which connected water body belongs to each lake. The basin search extends beyond the source inventory outline. A detected component reaching the study boundary fails the final quality gate. The Batken locator uses the union of the 2016 and 2024 outlines of the same basin, buffered by 20 m before simplification. [Glacial lakes of Kyrgyzstan](https://doi.org/10.5281/zenodo.17869915)
 
 ## Sentinel-2 optical observations
 

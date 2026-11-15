@@ -4,16 +4,15 @@
 
 Satellite observations of glacial lake surface extent in Kyrgyzstan. Built for **NASA Space Apps Challenge 2026 — Dancing with the SARs**.
 
-GlacierWatch lets researchers and judges inspect the same lake on two dates, see the pixels behind each measured shoreline and trace each value to the originating product. The app is a research demonstration. It shows observable open-water extent and is unsuitable for emergency decisions or forecasts.
+GlacierWatch lets researchers and judges inspect satellite observations of a lake, see the pixels behind each measured shoreline and trace each value to the originating product. The app is a research demonstration of observable open-water extent.
 
 ## Explore
 
-- **Petrov Lake**, a moraine-dammed lake in Ak-Shyirak. Compare both same-track NASA–ISRO NISAR radar acquisitions and a separate Sentinel-2 optical series.
+- **Batken Glacial Lake**, an unnamed basin in the Kyrgyz glacial-lake inventory (record 1115). Sentinel‑2 mapped **0.0135 km² on 4 September 2024** and **0.0078 km² on 14 September 2024**, a **42.2%** reduction in open water with full usable coverage of the lake and shoreline on both dates.
+- **Petrov Lake**, a moraine-dammed lake in Ak-Shyirak. Inspect same-track NASA–ISRO NISAR observations and a separate Sentinel-2 optical series.
 - **Lake Ala-Kol**, a glacier-fed lake in the Teskey Range. A historical optical view is available from 2017. Some shore pixels are excluded and the coverage limitation is shown with each estimate.
-- **Adygine Lake 2**, the middle basin of the Ala-Archa glacier lake cascade. Field monitoring documents its surface outlet.
-- **Adygine Lake 3**, the separate upper glacier-contact basin. Its small size makes shore pixels sensitive to sensor resolution and classifier thresholds.
 
-Select two reviewed acquisition dates, drag the split view, toggle the water outlines and open the source records. The lake map shows georeferenced water boundaries. The public viewer uses precomputed assets and requires no NASA account.
+Choose a reviewed acquisition, toggle the water outline and open the source record. The split view is available for pairs with complete lake and shoreline coverage and a reduction beyond the sensitivity ranges. Published drainage studies explain how large reductions have been interpreted at Toguz-Bulak and Korumdu. The public viewer uses precomputed assets and requires no NASA account.
 
 ## NISAR result
 
@@ -21,13 +20,13 @@ On Petrov Lake, two 20 m, track 63 descending, Frequency A HH observations from 
 
 ## Data sources
 
-- NASA / Alaska Satellite Facility DAAC provides **NASA–ISRO NISAR L2 GCOV**. The website comparison uses two `NISAR_L2_GCOV_PROVISIONAL_V1` granules, both CRID P05023. NASA Harmony generated the cutouts from Frequency A HH × HH, its subswath mask, and its number-of-looks layer. [ASF GCOV product guide](https://nisar-docs.asf.alaska.edu/gcov/) · [NASA Harmony documentation](https://harmony.earthdata.nasa.gov/docs)
+- NASA / Alaska Satellite Facility DAAC provides **NASA–ISRO NISAR L2 GCOV**. The archive includes two `NISAR_L2_GCOV_PROVISIONAL_V1` granules, both CRID P05023. NASA Harmony generated the cutouts from Frequency A HH × HH, its subswath mask, and its number-of-looks layer. [ASF GCOV product guide](https://nisar-docs.asf.alaska.edu/gcov/) · [NASA Harmony documentation](https://harmony.earthdata.nasa.gov/docs)
 - **Copernicus Sentinel-2 MSI Level-2A** surface reflectance, available through Element 84's public Earth Search COG archive. It supplies optical comparisons and independent checks for NISAR. Contains modified Copernicus Sentinel data 2017, 2020, 2024–2026. [Sentinel-2 documentation](https://sentiwiki.copernicus.eu/web/s2-products) · [Earth Search collection](https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a)
 - The [Kyrgyz glacial-lake inventory](https://doi.org/10.5281/zenodo.17869915) identifies basin locations and independent reference footprints. [Natural Earth](https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/) provides regional map boundaries. Lake-specific field and historical research is listed in [lake selection](docs/lake-selection.md).
 
 [Full source and granule ledger](docs/data-sources.md) · [Machine-readable observation inventory](dist/data/inventory.json)
 
-[Seven-slide pitch deck](pitch/GlacierWatch.pptx) · [Submission copy and spoken pitch](docs/submission.md)
+[Original hackathon pitch deck](pitch/GlacierWatch.pptx) · [Original submission copy and spoken pitch](docs/submission.md)
 
 ## Run locally
 
@@ -42,7 +41,7 @@ The site runs directly from the checked-in `dist/` directory. The offline pipeli
 ```sh
 python -m pip install -r requirements.txt
 python pipeline/geography.py
-python pipeline/catalog.py --lake petrov --lake alakol --lake adygine2 --lake adygine3
+python pipeline/catalog.py --lake inventory-1115 --lake petrov --lake alakol
 python pipeline/optical.py
 python pipeline/radar.py
 python pipeline/inventory.py
