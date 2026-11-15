@@ -27,7 +27,7 @@ On Petrov Lake, two 20 m, track 63 descending, Frequency A HH observations from 
 
 [Full source and granule ledger](docs/data-sources.md) · [Machine-readable observation inventory](dist/data/inventory.json)
 
-[Submission copy and spoken pitch](docs/submission.md)
+[Seven-slide pitch deck](pitch/GlacierWatch.pptx) · [Submission copy and spoken pitch](docs/submission.md)
 
 ## Run locally
 

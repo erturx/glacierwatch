@@ -6,6 +6,8 @@
 
 **Public source.** [erturx/glacierwatch](https://github.com/erturx/glacierwatch)
 
+**Pitch slides.** [GlacierWatch PowerPoint](../pitch/GlacierWatch.pptx)
+
 ## Short description
 
 GlacierWatch lets researchers compare glacial lake shorelines in Kyrgyzstan using NASA–ISRO NISAR and Copernicus Sentinel-2. The explorer shows two acquisitions, their mapped open-water areas and the source and quality of each estimate. It covers Petrov Lake, Lake Ala-Kol and two distinct basins in the Adygine cascade.
