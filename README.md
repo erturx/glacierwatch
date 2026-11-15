@@ -1,5 +1,7 @@
 # GlacierWatch
 
+**[Open the live GlacierWatch explorer](https://glacierwatch.tastyring263.chatgpt.site/)**
+
 Satellite observations of glacial lake surface extent in Kyrgyzstan. Built for **NASA Space Apps Challenge 2026 — Dancing with the SARs**.
 
 GlacierWatch lets researchers and judges inspect the same lake on two dates, see the pixels behind each measured shoreline and trace each value to the originating product. The app is a research demonstration. It shows observable open-water extent and is unsuitable for emergency decisions or forecasts.
@@ -25,6 +27,8 @@ On Petrov Lake, two 20 m, track 63 descending, Frequency A HH observations from 
 
 [Full source and granule ledger](docs/data-sources.md) · [Machine-readable observation inventory](dist/data/inventory.json)
 
+[Submission copy and spoken pitch](docs/submission.md)
+
 ## Run locally
 
 With Python installed, start the static site and visit [localhost:8765](http://localhost:8765).
@@ -37,6 +41,7 @@ The site runs directly from the checked-in `dist/` directory. The offline pipeli
 
 ```sh
 python -m pip install -r requirements.txt
+python pipeline/geography.py
 python pipeline/catalog.py --lake petrov --lake alakol --lake adygine2 --lake adygine3
 python pipeline/optical.py
 python pipeline/radar.py
