@@ -1,0 +1,206 @@
+{
+  "id": "alakol",
+  "name": "Lake Ala-Kol",
+  "region": "Teskey Range",
+  "lon": 78.53466,
+  "lat": 42.31717,
+  "radius": 2000,
+  "rank": "reserve",
+  "reference": "https://doi.org/10.1016/j.palaeo.2020.109987",
+  "context": "A glacier-fed high-altitude lake. Sediment cores record past fluctuations of the upstream glacier and local climate.",
+  "extent": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          78.55963649576238,
+          42.29964154933074
+        ],
+        [
+          78.55824112469176,
+          42.33572344217613
+        ],
+        [
+          78.50961035416925,
+          42.33467691746417
+        ],
+        [
+          78.51103344655688,
+          42.29859633885154
+        ],
+        [
+          78.55963649576238,
+          42.29964154933074
+        ]
+      ]
+    ]
+  },
+  "defaultDates": [
+    "S2B_43TGH_20240809_0_L2A",
+    "S2B_43TGH_20260829_0_L2A"
+  ],
+  "observations": [
+    {
+      "id": "S2B_44TKM_20170727_0_L2A",
+      "lake": "alakol",
+      "datetime": "2017-07-27T05:38:54.945000Z",
+      "provider": "ESA / Copernicus via Element 84 Earth Search",
+      "satellite": "Sentinel-2B",
+      "instrument": "MSI",
+      "product": "Sentinel-2 L2A surface reflectance",
+      "collection": "sentinel-2-l2a",
+      "granule": "S2B_OPER_MSI_L2A_TL_SHIT_20200331T012610_A002033_T44TKM_N00.01",
+      "safeProduct": "S2B_MSIL2A_20170727T053639_N0001_R005_T44TKM_20200331T012607.SAFE",
+      "baseline": "00.01",
+      "boaOffsetApplied": false,
+      "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_44TKM_20170727_0_L2A",
+      "inputs": {
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2017/7/S2B_44TKM_20170727_0_L2A/SCL.tif",
+        "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2017/7/S2B_44TKM_20170727_0_L2A/B03.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2017/7/S2B_44TKM_20170727_0_L2A/B08.tif",
+        "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2017/7/S2B_44TKM_20170727_0_L2A/B11.tif",
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2017/7/S2B_44TKM_20170727_0_L2A/B04.tif",
+        "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2017/7/S2B_44TKM_20170727_0_L2A/B02.tif"
+      },
+      "areaKm2": 1.2002,
+      "quality": {
+        "waterPixels": 12002,
+        "validFraction": 0.91639,
+        "unknownKm2": 0.1199,
+        "lowKm2": 1.1865,
+        "highKm2": 1.3309,
+        "sclWaterPixels": 12595,
+        "sclOverlap": 0.9995,
+        "touchesBasinEdge": false,
+        "review": "The visible connected lake is retained with a coverage limitation. Local masking leaves part of the lake and shoreline check unobserved.",
+        "status": "Coverage-limited"
+      },
+      "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+      "grid": {
+        "crs": "EPSG:32644",
+        "bounds": [
+          294830,
+          4685930,
+          298840,
+          4689940
+        ],
+        "size": 401,
+        "pixelMetres": 10
+      },
+      "files": {
+        "image": "data/alakol/S2B_44TKM_20170727_0_L2A.webp",
+        "overlay": "data/alakol/S2B_44TKM_20170727_0_L2A.png",
+        "boundary": "data/alakol/S2B_44TKM_20170727_0_L2A.geojson",
+        "mask": "data/alakol/S2B_44TKM_20170727_0_L2A.tif"
+      }
+    },
+    {
+      "id": "S2B_43TGH_20240809_0_L2A",
+      "lake": "alakol",
+      "datetime": "2024-08-09T05:47:10.686000Z",
+      "provider": "ESA / Copernicus via Element 84 Earth Search",
+      "satellite": "Sentinel-2B",
+      "instrument": "MSI",
+      "product": "Sentinel-2 L2A surface reflectance",
+      "collection": "sentinel-2-l2a",
+      "granule": "S2B_OPER_MSI_L2A_TL_2BPS_20240809T094816_A038784_T43TGH_N05.11",
+      "safeProduct": "S2B_MSIL2A_20240809T053649_N0511_R005_T43TGH_20240809T094816.SAFE",
+      "baseline": "05.11",
+      "boaOffsetApplied": true,
+      "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_43TGH_20240809_0_L2A",
+      "inputs": {
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2024/8/S2B_43TGH_20240809_0_L2A/SCL.tif",
+        "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2024/8/S2B_43TGH_20240809_0_L2A/B03.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2024/8/S2B_43TGH_20240809_0_L2A/B08.tif",
+        "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2024/8/S2B_43TGH_20240809_0_L2A/B11.tif",
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2024/8/S2B_43TGH_20240809_0_L2A/B04.tif",
+        "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2024/8/S2B_43TGH_20240809_0_L2A/B02.tif"
+      },
+      "areaKm2": 1.2068,
+      "quality": {
+        "waterPixels": 12068,
+        "validFraction": 0.91632,
+        "unknownKm2": 0.119,
+        "lowKm2": 1.2015,
+        "highKm2": 1.3299,
+        "sclWaterPixels": 12091,
+        "sclOverlap": 0.9878,
+        "touchesBasinEdge": false,
+        "review": "Coverage-limited estimate. The visible lake outline agrees with the RGB image. Unobserved pixels widen its sensitivity range.",
+        "status": "Coverage-limited"
+      },
+      "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+      "grid": {
+        "crs": "EPSG:32644",
+        "bounds": [
+          294830,
+          4685930,
+          298840,
+          4689940
+        ],
+        "size": 401,
+        "pixelMetres": 10
+      },
+      "files": {
+        "image": "data/alakol/S2B_43TGH_20240809_0_L2A.webp",
+        "overlay": "data/alakol/S2B_43TGH_20240809_0_L2A.png",
+        "boundary": "data/alakol/S2B_43TGH_20240809_0_L2A.geojson",
+        "mask": "data/alakol/S2B_43TGH_20240809_0_L2A.tif"
+      }
+    },
+    {
+      "id": "S2B_43TGH_20260829_0_L2A",
+      "lake": "alakol",
+      "datetime": "2026-08-29T05:47:03.892000Z",
+      "provider": "ESA / Copernicus via Element 84 Earth Search",
+      "satellite": "Sentinel-2B",
+      "instrument": "MSI",
+      "product": "Sentinel-2 L2A surface reflectance",
+      "collection": "sentinel-2-l2a",
+      "granule": "S2B_MSIL2A_20260829T053639_N0512_R005_T43TGH_20260829T091959.SAFE",
+      "safeProduct": "S2B_MSIL2A_20260829T053639_N0512_R005_T43TGH_20260829T091959.SAFE",
+      "baseline": "05.12",
+      "boaOffsetApplied": true,
+      "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_43TGH_20260829_0_L2A",
+      "inputs": {
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2026/8/S2B_43TGH_20260829_0_L2A/SCL.tif",
+        "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2026/8/S2B_43TGH_20260829_0_L2A/B03.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2026/8/S2B_43TGH_20260829_0_L2A/B08.tif",
+        "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2026/8/S2B_43TGH_20260829_0_L2A/B11.tif",
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2026/8/S2B_43TGH_20260829_0_L2A/B04.tif",
+        "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2026/8/S2B_43TGH_20260829_0_L2A/B02.tif"
+      },
+      "areaKm2": 1.1922,
+      "quality": {
+        "waterPixels": 11922,
+        "validFraction": 0.91296,
+        "unknownKm2": 0.1225,
+        "lowKm2": 1.1849,
+        "highKm2": 1.3222,
+        "sclWaterPixels": 11719,
+        "sclOverlap": 0.9594,
+        "touchesBasinEdge": false,
+        "review": "Coverage-limited estimate. The connected outline is visible in RGB and adjacent areas outside coverage are masked.",
+        "status": "Coverage-limited"
+      },
+      "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+      "grid": {
+        "crs": "EPSG:32644",
+        "bounds": [
+          294830,
+          4685930,
+          298840,
+          4689940
+        ],
+        "size": 401,
+        "pixelMetres": 10
+      },
+      "files": {
+        "image": "data/alakol/S2B_43TGH_20260829_0_L2A.webp",
+        "overlay": "data/alakol/S2B_43TGH_20260829_0_L2A.png",
+        "boundary": "data/alakol/S2B_43TGH_20260829_0_L2A.geojson",
+        "mask": "data/alakol/S2B_43TGH_20260829_0_L2A.tif"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "petrov": {
+    "G4285596420-ASF": {
+      "thresholdDb": -14.5,
+      "opticalScene": "S2C_44TKM_20260814_0_L2A",
+      "review": "Same track and release as observation B. The 14 August optical reference is three days earlier. The comparison uses its clear pixels only. Wind and floating material can brighten parts of the lake."
+    },
+    "G4309891477-ASF": {
+      "thresholdDb": -14.5,
+      "opticalScene": "S2B_44TKM_20260918_1_L2A",
+      "review": "Same track and release as observation A. The 18 September optical reference is eight days later. Cloud exclusions limit the optical agreement check to shared clear pixels."
+    }
+  }
+}

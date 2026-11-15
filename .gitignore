@@ -1,0 +1,8 @@
+.cache/
+__pycache__/
+.venv/
+*.pyc
+*.h5
+.env
+.netrc
+_netrc

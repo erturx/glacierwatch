@@ -1,0 +1,10 @@
+# Limitations
+
+- GlacierWatch maps observable open-water area in selected satellite acquisitions. Water volume, dam stability and flood probability require additional field and hydrological evidence.
+- Ice and snow, submerged or floating material, wave roughness, mixed pixels, clouds and terrain illumination can change the recovered outline. Mountain radar shadow and layover may mimic water. The GCOV subswath mask is a focusing/coverage mask and supplies no independent terrain-shadow classification.
+- Coverage checks operate over the identified lake and immediate shoreline. Areas are observed-detection estimates. Unknown and excluded cells are shown in the overlay, preserved as 255 in masks and included as potential water in the upper sensitivity value near a lake.
+- Ala-Kol is published with a coverage-limited status. Its approved scenes cover about 91–92% of the lake/shore check. All three form a coherent water body visible in RGB. The broad uncertainty makes their small measured differences unresolved.
+- The Adygine lakes are small. Level-2A scene classification at 20 m disagrees with the spectral index at some lake edges. RGB review, the published field map, the 2024 inventory and an explicit sensitivity range inform the comparison.
+- NISAR inputs are early calibrated PROVISIONAL P05023 data. ASF documents processing differences from VALIDATED P05036 and a permanent data gap from 27 July 2026 22:03:25 UTC to 10 August 2026 00:55:27 UTC. No observations are interpolated. [ASF known issues](https://nisar-docs.asf.alaska.edu/nisar-known-issues/)
+- Optical-to-radar agreement is computed only on shared clear pixels and over observations offset by up to eight days. It does not resolve attribution of shape differences to level change, wind or classifier response. The website compares like sensors and like radar maturity and orbit.
+- The sensitivity ranges vary selected detection thresholds and incorporate exterior/unknown cells within the check footprint. They are screening bounds and carry no confidence level.

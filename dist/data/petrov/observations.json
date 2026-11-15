@@ -1,0 +1,206 @@
+{
+  "id": "petrov",
+  "name": "Petrov Lake",
+  "region": "Ak-Shyirak",
+  "lon": 78.24,
+  "lat": 41.9056,
+  "radius": 3000,
+  "rank": "primary",
+  "reference": "https://www.sciencedirect.com/science/article/pii/S0034425724004632",
+  "context": "A moraine-dammed lake at the terminus of Petrov Glacier. Satellite research documents its evolution from 1973 to 2023.",
+  "extent": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          78.27732685669972,
+          41.879390247247315
+        ],
+        [
+          78.27502683422276,
+          41.933459922305445
+        ],
+        [
+          78.20261853604073,
+          41.931717348765794
+        ],
+        [
+          78.20497948337736,
+          41.87765095674968
+        ],
+        [
+          78.27732685669972,
+          41.879390247247315
+        ]
+      ]
+    ]
+  },
+  "defaultDates": [
+    "S2A_44TKM_20200716_3_L2A",
+    "S2A_44TKM_20260727_0_L2A"
+  ],
+  "observations": [
+    {
+      "id": "S2A_44TKM_20200716_3_L2A",
+      "lake": "petrov",
+      "datetime": "2020-07-16T05:47:26.502000Z",
+      "provider": "ESA / Copernicus via Element 84 Earth Search",
+      "satellite": "Sentinel-2A",
+      "instrument": "MSI",
+      "product": "Sentinel-2 L2A surface reflectance",
+      "collection": "sentinel-2-l2a",
+      "granule": "S2A_OPER_MSI_L2A_TL_S2RP_20230323T160944_A026457_T44TKM_N05.00",
+      "safeProduct": "S2A_MSIL2A_20200716T053651_N0500_R005_T44TKM_20230323T160944.SAFE",
+      "baseline": "05.00",
+      "boaOffsetApplied": true,
+      "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_44TKM_20200716_3_L2A",
+      "inputs": {
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2020/7/S2A_44TKM_20200716_3_L2A/SCL.tif",
+        "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2020/7/S2A_44TKM_20200716_3_L2A/B03.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2020/7/S2A_44TKM_20200716_3_L2A/B08.tif",
+        "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2020/7/S2A_44TKM_20200716_3_L2A/B11.tif",
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2020/7/S2A_44TKM_20200716_3_L2A/B04.tif",
+        "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2020/7/S2A_44TKM_20200716_3_L2A/B02.tif"
+      },
+      "areaKm2": 3.8775,
+      "quality": {
+        "waterPixels": 38775,
+        "validFraction": 0.95022,
+        "unknownKm2": 0.2389,
+        "lowKm2": 3.8614,
+        "highKm2": 4.2248,
+        "sclWaterPixels": 40679,
+        "sclOverlap": 0.8539,
+        "touchesBasinEdge": false,
+        "review": "Reviewed against the visible basin. Glacier-proximal masking and mixed pixels affect the eastern margin.",
+        "status": "Reviewed"
+      },
+      "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+      "grid": {
+        "crs": "EPSG:32644",
+        "bounds": [
+          268070,
+          4639970,
+          274080,
+          4645980
+        ],
+        "size": 601,
+        "pixelMetres": 10
+      },
+      "files": {
+        "image": "data/petrov/S2A_44TKM_20200716_3_L2A.webp",
+        "overlay": "data/petrov/S2A_44TKM_20200716_3_L2A.png",
+        "boundary": "data/petrov/S2A_44TKM_20200716_3_L2A.geojson",
+        "mask": "data/petrov/S2A_44TKM_20200716_3_L2A.tif"
+      }
+    },
+    {
+      "id": "S2A_44TKM_20250712_0_L2A",
+      "lake": "petrov",
+      "datetime": "2025-07-12T05:47:40.675000Z",
+      "provider": "ESA / Copernicus via Element 84 Earth Search",
+      "satellite": "Sentinel-2A",
+      "instrument": "MSI",
+      "product": "Sentinel-2 L2A surface reflectance",
+      "collection": "sentinel-2-l2a",
+      "granule": "S2A_MSIL2A_20250712T054251_N0511_R005_T44TKM_20250712T085313.SAFE",
+      "safeProduct": "S2A_MSIL2A_20250712T054251_N0511_R005_T44TKM_20250712T085313.SAFE",
+      "baseline": "05.11",
+      "boaOffsetApplied": true,
+      "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_44TKM_20250712_0_L2A",
+      "inputs": {
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2025/7/S2A_44TKM_20250712_0_L2A/SCL.tif",
+        "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2025/7/S2A_44TKM_20250712_0_L2A/B03.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2025/7/S2A_44TKM_20250712_0_L2A/B08.tif",
+        "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2025/7/S2A_44TKM_20250712_0_L2A/B11.tif",
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2025/7/S2A_44TKM_20250712_0_L2A/B04.tif",
+        "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2025/7/S2A_44TKM_20250712_0_L2A/B02.tif"
+      },
+      "areaKm2": 4.2899,
+      "quality": {
+        "waterPixels": 42899,
+        "validFraction": 0.95026,
+        "unknownKm2": 0.2487,
+        "lowKm2": 4.0313,
+        "highKm2": 4.557,
+        "sclWaterPixels": 43993,
+        "sclOverlap": 0.9403,
+        "touchesBasinEdge": false,
+        "review": "Reviewed against the visible water edge. Floating material and bright near-shore pixels influence the sensitivity range.",
+        "status": "Reviewed"
+      },
+      "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+      "grid": {
+        "crs": "EPSG:32644",
+        "bounds": [
+          268070,
+          4639970,
+          274080,
+          4645980
+        ],
+        "size": 601,
+        "pixelMetres": 10
+      },
+      "files": {
+        "image": "data/petrov/S2A_44TKM_20250712_0_L2A.webp",
+        "overlay": "data/petrov/S2A_44TKM_20250712_0_L2A.png",
+        "boundary": "data/petrov/S2A_44TKM_20250712_0_L2A.geojson",
+        "mask": "data/petrov/S2A_44TKM_20250712_0_L2A.tif"
+      }
+    },
+    {
+      "id": "S2A_44TKM_20260727_0_L2A",
+      "lake": "petrov",
+      "datetime": "2026-07-27T05:47:39.329000Z",
+      "provider": "ESA / Copernicus via Element 84 Earth Search",
+      "satellite": "Sentinel-2A",
+      "instrument": "MSI",
+      "product": "Sentinel-2 L2A surface reflectance",
+      "collection": "sentinel-2-l2a",
+      "granule": "S2A_MSIL2A_20260727T054251_N0512_R005_T44TKM_20260727T085910.SAFE",
+      "safeProduct": "S2A_MSIL2A_20260727T054251_N0512_R005_T44TKM_20260727T085910.SAFE",
+      "baseline": "05.12",
+      "boaOffsetApplied": true,
+      "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_44TKM_20260727_0_L2A",
+      "inputs": {
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/7/S2A_44TKM_20260727_0_L2A/SCL.tif",
+        "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/7/S2A_44TKM_20260727_0_L2A/B03.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/7/S2A_44TKM_20260727_0_L2A/B08.tif",
+        "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/7/S2A_44TKM_20260727_0_L2A/B11.tif",
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/7/S2A_44TKM_20260727_0_L2A/B04.tif",
+        "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/7/S2A_44TKM_20260727_0_L2A/B02.tif"
+      },
+      "areaKm2": 4.0479,
+      "quality": {
+        "waterPixels": 40479,
+        "validFraction": 0.98375,
+        "unknownKm2": 0.0789,
+        "lowKm2": 4.0293,
+        "highKm2": 4.2792,
+        "sclWaterPixels": 47050,
+        "sclOverlap": 0.9613,
+        "touchesBasinEdge": false,
+        "review": "Reviewed on the native multispectral subset. Masked pixels near the glacier margin contribute to the upper sensitivity bound.",
+        "status": "Reviewed"
+      },
+      "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+      "grid": {
+        "crs": "EPSG:32644",
+        "bounds": [
+          268070,
+          4639970,
+          274080,
+          4645980
+        ],
+        "size": 601,
+        "pixelMetres": 10
+      },
+      "files": {
+        "image": "data/petrov/S2A_44TKM_20260727_0_L2A.webp",
+        "overlay": "data/petrov/S2A_44TKM_20260727_0_L2A.png",
+        "boundary": "data/petrov/S2A_44TKM_20260727_0_L2A.geojson",
+        "mask": "data/petrov/S2A_44TKM_20260727_0_L2A.tif"
+      }
+    }
+  ]
+}

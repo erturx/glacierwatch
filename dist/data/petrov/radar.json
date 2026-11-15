@@ -1,0 +1,182 @@
+[
+  {
+    "id": "nisar-20260817T135231",
+    "lake": "petrov",
+    "datetime": "2026-08-17T13:52:31Z",
+    "provider": "NASA / ASF DAAC",
+    "satellite": "NASA\u2013ISRO NISAR",
+    "instrument": "L-band SAR",
+    "product": "NISAR Level 2 GCOV",
+    "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+    "granule": "NISAR_L2_PR_GCOV_028_063_D_067_2005_DHDH_A_20260817T135231_20260817T135306_P05023_N_F_J_001",
+    "concept": "G4285596420-ASF",
+    "track": 63,
+    "direction": "Descending",
+    "maturity": "PROVISIONAL",
+    "release": "P05023",
+    "polarization": "HH \u00d7 HH, Frequency A",
+    "source": "https://search.earthdata.nasa.gov/search/granules?p=C2854338529-ASF&pg[0][id]=G4285596420-ASF",
+    "harmonyJob": "https://harmony.earthdata.nasa.gov/jobs/c999795d-5a71-46da-a431-2d5c469b02f7",
+    "harmonyBbox": [
+      78.193,
+      41.87,
+      78.29,
+      41.94
+    ],
+    "inputs": {
+      "HHHH": {
+        "file": "NISAR_L2_PR_GCOV_028_063_D_067_2005_DHDH_A_20260817T135231_20260817T135306_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_HHHH_subsetted.tif",
+        "sha256": "216266802a95676055874623d1f2849d70e160db93af1a3cf7bcfd67e702fc35"
+      },
+      "mask": {
+        "file": "NISAR_L2_PR_GCOV_028_063_D_067_2005_DHDH_A_20260817T135231_20260817T135306_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_mask_subsetted.tif",
+        "sha256": "87ff78204a0973ba73ac913c1c5a4f6f71c9a5144c71bb09a7acd7ab3b9d0559"
+      },
+      "numberOfLooks": {
+        "file": "NISAR_L2_PR_GCOV_028_063_D_067_2005_DHDH_A_20260817T135231_20260817T135306_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_numberOfLooks_subsetted.tif",
+        "sha256": "d4b7258a6a36b030ff5d46913ee3a81ad7ec3b7a8b41a683b11b9dafcc7d98c3"
+      }
+    },
+    "areaKm2": 4.5288,
+    "quality": {
+      "waterPixels": 11322,
+      "validFraction": 0.9986950180394565,
+      "unknownKm2": 0.0068,
+      "lowKm2": 3.8788,
+      "highKm2": 4.8576,
+      "medianLooks": 10.47,
+      "thresholdDb": -14.5,
+      "touchesBasinEdge": false,
+      "medianWaterDb": -17.23,
+      "medianSurroundingsDb": -8.58,
+      "opticalComparison": {
+        "scene": "S2C_44TKM_20260814_0_L2A",
+        "datetime": "2026-08-14T05:47:20.116000Z",
+        "provider": "ESA / Copernicus via Element 84 Earth Search",
+        "product": "Sentinel-2 L2A surface reflectance",
+        "collection": "sentinel-2-l2a",
+        "satellite": "sentinel-2c",
+        "instrument": "MSI",
+        "granule": "S2C_MSIL2A_20260814T053641_N0512_R005_T44TKM_20260814T085710.SAFE",
+        "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_44TKM_20260814_0_L2A",
+        "inputs": {
+          "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/8/S2C_44TKM_20260814_0_L2A/SCL.tif",
+          "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/8/S2C_44TKM_20260814_0_L2A/B03.tif",
+          "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/8/S2C_44TKM_20260814_0_L2A/B08.tif",
+          "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/8/S2C_44TKM_20260814_0_L2A/B11.tif",
+          "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/8/S2C_44TKM_20260814_0_L2A/B04.tif",
+          "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/8/S2C_44TKM_20260814_0_L2A/B02.tif"
+        },
+        "baseline": "05.12",
+        "validFraction": 0.87857,
+        "iou": 0.811,
+        "opticalKm2OnSharedPixels": 3.458,
+        "radarKm2OnSharedPixels": 4.0932
+      },
+      "review": "Same track and release as observation B. The 14 August optical reference is three days earlier. The comparison uses its clear pixels only. Wind and floating material can brighten parts of the lake.",
+      "status": "Reviewed"
+    },
+    "method": "HH gamma-zero in dB, 3\u00d73 local mean, fixed threshold, connected basin component",
+    "grid": {
+      "crs": "EPSG:32643",
+      "size": 301,
+      "pixelMetres": 20.0
+    },
+    "files": {
+      "image": "data/petrov/nisar-20260817T135231.webp",
+      "overlay": "data/petrov/nisar-20260817T135231.png",
+      "boundary": "data/petrov/nisar-20260817T135231.geojson",
+      "mask": "data/petrov/nisar-20260817T135231.tif"
+    }
+  },
+  {
+    "id": "nisar-20260910T135231",
+    "lake": "petrov",
+    "datetime": "2026-09-10T13:52:31Z",
+    "provider": "NASA / ASF DAAC",
+    "satellite": "NASA\u2013ISRO NISAR",
+    "instrument": "L-band SAR",
+    "product": "NISAR Level 2 GCOV",
+    "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+    "granule": "NISAR_L2_PR_GCOV_030_063_D_067_2005_DHDH_A_20260910T135231_20260910T135306_P05023_N_F_J_001",
+    "concept": "G4309891477-ASF",
+    "track": 63,
+    "direction": "Descending",
+    "maturity": "PROVISIONAL",
+    "release": "P05023",
+    "polarization": "HH \u00d7 HH, Frequency A",
+    "source": "https://search.earthdata.nasa.gov/search/granules?p=C2854338529-ASF&pg[0][id]=G4309891477-ASF",
+    "harmonyJob": "https://harmony.earthdata.nasa.gov/jobs/c999795d-5a71-46da-a431-2d5c469b02f7",
+    "harmonyBbox": [
+      78.193,
+      41.87,
+      78.29,
+      41.94
+    ],
+    "inputs": {
+      "HHHH": {
+        "file": "NISAR_L2_PR_GCOV_030_063_D_067_2005_DHDH_A_20260910T135231_20260910T135306_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_HHHH_subsetted.tif",
+        "sha256": "89a8c108ebe9b5527f22e54f0662d6735f4f08b1a4d8871a3df39c175992891d"
+      },
+      "mask": {
+        "file": "NISAR_L2_PR_GCOV_030_063_D_067_2005_DHDH_A_20260910T135231_20260910T135306_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_mask_subsetted.tif",
+        "sha256": "ce9d6a1a0e4c3fbac7a0bb157b3b08e046580686b48ac9a89a47e2c25c6679c2"
+      },
+      "numberOfLooks": {
+        "file": "NISAR_L2_PR_GCOV_030_063_D_067_2005_DHDH_A_20260910T135231_20260910T135306_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_numberOfLooks_subsetted.tif",
+        "sha256": "bf39cbb2465162525bd5019804a195aaff1e5ba73e8f8d68f3cb9410dc1fcf77"
+      }
+    },
+    "areaKm2": 4.4676,
+    "quality": {
+      "waterPixels": 11169,
+      "validFraction": 0.9986875627267814,
+      "unknownKm2": 0.0068,
+      "lowKm2": 3.8076,
+      "highKm2": 4.8356,
+      "medianLooks": 10.48,
+      "thresholdDb": -14.5,
+      "touchesBasinEdge": false,
+      "medianWaterDb": -17.12,
+      "medianSurroundingsDb": -8.57,
+      "opticalComparison": {
+        "scene": "S2B_44TKM_20260918_1_L2A",
+        "datetime": "2026-09-18T05:47:19.991000Z",
+        "provider": "ESA / Copernicus via Element 84 Earth Search",
+        "product": "Sentinel-2 L2A surface reflectance",
+        "collection": "sentinel-2-l2a",
+        "satellite": "sentinel-2b",
+        "instrument": "MSI",
+        "granule": "S2B_MSIL2A_20260918T053639_N0512_R005_T44TKM_20260918T092317.SAFE",
+        "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_44TKM_20260918_1_L2A",
+        "inputs": {
+          "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/9/S2B_44TKM_20260918_1_L2A/SCL.tif",
+          "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/9/S2B_44TKM_20260918_1_L2A/B03.tif",
+          "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/9/S2B_44TKM_20260918_1_L2A/B08.tif",
+          "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/9/S2B_44TKM_20260918_1_L2A/B11.tif",
+          "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/9/S2B_44TKM_20260918_1_L2A/B04.tif",
+          "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/9/S2B_44TKM_20260918_1_L2A/B02.tif"
+        },
+        "baseline": "05.12",
+        "validFraction": 0.85747,
+        "iou": 0.8871,
+        "opticalKm2OnSharedPixels": 3.7008,
+        "radarKm2OnSharedPixels": 3.9268
+      },
+      "review": "Same track and release as observation A. The 18 September optical reference is eight days later. Cloud exclusions limit the optical agreement check to shared clear pixels.",
+      "status": "Reviewed"
+    },
+    "method": "HH gamma-zero in dB, 3\u00d73 local mean, fixed threshold, connected basin component",
+    "grid": {
+      "crs": "EPSG:32643",
+      "size": 301,
+      "pixelMetres": 20.0
+    },
+    "files": {
+      "image": "data/petrov/nisar-20260910T135231.webp",
+      "overlay": "data/petrov/nisar-20260910T135231.png",
+      "boundary": "data/petrov/nisar-20260910T135231.geojson",
+      "mask": "data/petrov/nisar-20260910T135231.tif"
+    }
+  }
+]

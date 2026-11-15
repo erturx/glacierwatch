@@ -1,0 +1,1039 @@
+{
+  "lakes": [
+    {
+      "id": "petrov",
+      "name": "Petrov Lake",
+      "region": "Ak-Shyirak",
+      "lon": 78.24,
+      "lat": 41.9056,
+      "radius": 3000,
+      "rank": "primary",
+      "reference": "https://www.sciencedirect.com/science/article/pii/S0034425724004632",
+      "context": "A moraine-dammed lake at the terminus of Petrov Glacier. Satellite research documents its evolution from 1973 to 2023.",
+      "extent": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.27732685669972,
+              41.879390247247315
+            ],
+            [
+              78.27502683422276,
+              41.933459922305445
+            ],
+            [
+              78.20261853604073,
+              41.931717348765794
+            ],
+            [
+              78.20497948337736,
+              41.87765095674968
+            ],
+            [
+              78.27732685669972,
+              41.879390247247315
+            ]
+          ]
+        ]
+      },
+      "series": [
+        {
+          "key": "radar",
+          "defaultDates": [
+            "nisar-20260817T135231",
+            "nisar-20260910T135231"
+          ],
+          "observations": [
+            {
+              "id": "nisar-20260817T135231",
+              "lake": "petrov",
+              "datetime": "2026-08-17T13:52:31Z",
+              "provider": "NASA / ASF DAAC",
+              "satellite": "NASA\u2013ISRO NISAR",
+              "instrument": "L-band SAR",
+              "product": "NISAR Level 2 GCOV",
+              "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+              "granule": "NISAR_L2_PR_GCOV_028_063_D_067_2005_DHDH_A_20260817T135231_20260817T135306_P05023_N_F_J_001",
+              "concept": "G4285596420-ASF",
+              "track": 63,
+              "direction": "Descending",
+              "maturity": "PROVISIONAL",
+              "release": "P05023",
+              "polarization": "HH \u00d7 HH, Frequency A",
+              "source": "https://search.earthdata.nasa.gov/search/granules?p=C2854338529-ASF&pg[0][id]=G4285596420-ASF",
+              "harmonyJob": "https://harmony.earthdata.nasa.gov/jobs/c999795d-5a71-46da-a431-2d5c469b02f7",
+              "harmonyBbox": [
+                78.193,
+                41.87,
+                78.29,
+                41.94
+              ],
+              "inputs": {
+                "HHHH": {
+                  "file": "NISAR_L2_PR_GCOV_028_063_D_067_2005_DHDH_A_20260817T135231_20260817T135306_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_HHHH_subsetted.tif",
+                  "sha256": "216266802a95676055874623d1f2849d70e160db93af1a3cf7bcfd67e702fc35"
+                },
+                "mask": {
+                  "file": "NISAR_L2_PR_GCOV_028_063_D_067_2005_DHDH_A_20260817T135231_20260817T135306_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_mask_subsetted.tif",
+                  "sha256": "87ff78204a0973ba73ac913c1c5a4f6f71c9a5144c71bb09a7acd7ab3b9d0559"
+                },
+                "numberOfLooks": {
+                  "file": "NISAR_L2_PR_GCOV_028_063_D_067_2005_DHDH_A_20260817T135231_20260817T135306_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_numberOfLooks_subsetted.tif",
+                  "sha256": "d4b7258a6a36b030ff5d46913ee3a81ad7ec3b7a8b41a683b11b9dafcc7d98c3"
+                }
+              },
+              "areaKm2": 4.5288,
+              "quality": {
+                "waterPixels": 11322,
+                "validFraction": 0.9986950180394565,
+                "unknownKm2": 0.0068,
+                "lowKm2": 3.8788,
+                "highKm2": 4.8576,
+                "medianLooks": 10.47,
+                "thresholdDb": -14.5,
+                "touchesBasinEdge": false,
+                "medianWaterDb": -17.23,
+                "medianSurroundingsDb": -8.58,
+                "opticalComparison": {
+                  "scene": "S2C_44TKM_20260814_0_L2A",
+                  "datetime": "2026-08-14T05:47:20.116000Z",
+                  "provider": "ESA / Copernicus via Element 84 Earth Search",
+                  "product": "Sentinel-2 L2A surface reflectance",
+                  "collection": "sentinel-2-l2a",
+                  "satellite": "sentinel-2c",
+                  "instrument": "MSI",
+                  "granule": "S2C_MSIL2A_20260814T053641_N0512_R005_T44TKM_20260814T085710.SAFE",
+                  "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_44TKM_20260814_0_L2A",
+                  "inputs": {
+                    "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/8/S2C_44TKM_20260814_0_L2A/SCL.tif",
+                    "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/8/S2C_44TKM_20260814_0_L2A/B03.tif",
+                    "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/8/S2C_44TKM_20260814_0_L2A/B08.tif",
+                    "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/8/S2C_44TKM_20260814_0_L2A/B11.tif",
+                    "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/8/S2C_44TKM_20260814_0_L2A/B04.tif",
+                    "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/8/S2C_44TKM_20260814_0_L2A/B02.tif"
+                  },
+                  "baseline": "05.12",
+                  "validFraction": 0.87857,
+                  "iou": 0.811,
+                  "opticalKm2OnSharedPixels": 3.458,
+                  "radarKm2OnSharedPixels": 4.0932
+                },
+                "review": "Same track and release as observation B. The 14 August optical reference is three days earlier. The comparison uses its clear pixels only. Wind and floating material can brighten parts of the lake.",
+                "status": "Reviewed"
+              },
+              "method": "HH gamma-zero in dB, 3\u00d73 local mean, fixed threshold, connected basin component",
+              "grid": {
+                "crs": "EPSG:32643",
+                "size": 301,
+                "pixelMetres": 20.0
+              },
+              "files": {
+                "image": "data/petrov/nisar-20260817T135231.webp",
+                "overlay": "data/petrov/nisar-20260817T135231.png",
+                "boundary": "data/petrov/nisar-20260817T135231.geojson",
+                "mask": "data/petrov/nisar-20260817T135231.tif"
+              }
+            },
+            {
+              "id": "nisar-20260910T135231",
+              "lake": "petrov",
+              "datetime": "2026-09-10T13:52:31Z",
+              "provider": "NASA / ASF DAAC",
+              "satellite": "NASA\u2013ISRO NISAR",
+              "instrument": "L-band SAR",
+              "product": "NISAR Level 2 GCOV",
+              "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+              "granule": "NISAR_L2_PR_GCOV_030_063_D_067_2005_DHDH_A_20260910T135231_20260910T135306_P05023_N_F_J_001",
+              "concept": "G4309891477-ASF",
+              "track": 63,
+              "direction": "Descending",
+              "maturity": "PROVISIONAL",
+              "release": "P05023",
+              "polarization": "HH \u00d7 HH, Frequency A",
+              "source": "https://search.earthdata.nasa.gov/search/granules?p=C2854338529-ASF&pg[0][id]=G4309891477-ASF",
+              "harmonyJob": "https://harmony.earthdata.nasa.gov/jobs/c999795d-5a71-46da-a431-2d5c469b02f7",
+              "harmonyBbox": [
+                78.193,
+                41.87,
+                78.29,
+                41.94
+              ],
+              "inputs": {
+                "HHHH": {
+                  "file": "NISAR_L2_PR_GCOV_030_063_D_067_2005_DHDH_A_20260910T135231_20260910T135306_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_HHHH_subsetted.tif",
+                  "sha256": "89a8c108ebe9b5527f22e54f0662d6735f4f08b1a4d8871a3df39c175992891d"
+                },
+                "mask": {
+                  "file": "NISAR_L2_PR_GCOV_030_063_D_067_2005_DHDH_A_20260910T135231_20260910T135306_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_mask_subsetted.tif",
+                  "sha256": "ce9d6a1a0e4c3fbac7a0bb157b3b08e046580686b48ac9a89a47e2c25c6679c2"
+                },
+                "numberOfLooks": {
+                  "file": "NISAR_L2_PR_GCOV_030_063_D_067_2005_DHDH_A_20260910T135231_20260910T135306_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_numberOfLooks_subsetted.tif",
+                  "sha256": "bf39cbb2465162525bd5019804a195aaff1e5ba73e8f8d68f3cb9410dc1fcf77"
+                }
+              },
+              "areaKm2": 4.4676,
+              "quality": {
+                "waterPixels": 11169,
+                "validFraction": 0.9986875627267814,
+                "unknownKm2": 0.0068,
+                "lowKm2": 3.8076,
+                "highKm2": 4.8356,
+                "medianLooks": 10.48,
+                "thresholdDb": -14.5,
+                "touchesBasinEdge": false,
+                "medianWaterDb": -17.12,
+                "medianSurroundingsDb": -8.57,
+                "opticalComparison": {
+                  "scene": "S2B_44TKM_20260918_1_L2A",
+                  "datetime": "2026-09-18T05:47:19.991000Z",
+                  "provider": "ESA / Copernicus via Element 84 Earth Search",
+                  "product": "Sentinel-2 L2A surface reflectance",
+                  "collection": "sentinel-2-l2a",
+                  "satellite": "sentinel-2b",
+                  "instrument": "MSI",
+                  "granule": "S2B_MSIL2A_20260918T053639_N0512_R005_T44TKM_20260918T092317.SAFE",
+                  "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_44TKM_20260918_1_L2A",
+                  "inputs": {
+                    "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/9/S2B_44TKM_20260918_1_L2A/SCL.tif",
+                    "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/9/S2B_44TKM_20260918_1_L2A/B03.tif",
+                    "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/9/S2B_44TKM_20260918_1_L2A/B08.tif",
+                    "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/9/S2B_44TKM_20260918_1_L2A/B11.tif",
+                    "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/9/S2B_44TKM_20260918_1_L2A/B04.tif",
+                    "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/9/S2B_44TKM_20260918_1_L2A/B02.tif"
+                  },
+                  "baseline": "05.12",
+                  "validFraction": 0.85747,
+                  "iou": 0.8871,
+                  "opticalKm2OnSharedPixels": 3.7008,
+                  "radarKm2OnSharedPixels": 3.9268
+                },
+                "review": "Same track and release as observation A. The 18 September optical reference is eight days later. Cloud exclusions limit the optical agreement check to shared clear pixels.",
+                "status": "Reviewed"
+              },
+              "method": "HH gamma-zero in dB, 3\u00d73 local mean, fixed threshold, connected basin component",
+              "grid": {
+                "crs": "EPSG:32643",
+                "size": 301,
+                "pixelMetres": 20.0
+              },
+              "files": {
+                "image": "data/petrov/nisar-20260910T135231.webp",
+                "overlay": "data/petrov/nisar-20260910T135231.png",
+                "boundary": "data/petrov/nisar-20260910T135231.geojson",
+                "mask": "data/petrov/nisar-20260910T135231.tif"
+              }
+            }
+          ]
+        },
+        {
+          "key": "optical",
+          "defaultDates": [
+            "S2A_44TKM_20200716_3_L2A",
+            "S2A_44TKM_20260727_0_L2A"
+          ],
+          "observations": [
+            {
+              "id": "S2A_44TKM_20200716_3_L2A",
+              "lake": "petrov",
+              "datetime": "2020-07-16T05:47:26.502000Z",
+              "provider": "ESA / Copernicus via Element 84 Earth Search",
+              "satellite": "Sentinel-2A",
+              "instrument": "MSI",
+              "product": "Sentinel-2 L2A surface reflectance",
+              "collection": "sentinel-2-l2a",
+              "granule": "S2A_OPER_MSI_L2A_TL_S2RP_20230323T160944_A026457_T44TKM_N05.00",
+              "safeProduct": "S2A_MSIL2A_20200716T053651_N0500_R005_T44TKM_20230323T160944.SAFE",
+              "baseline": "05.00",
+              "boaOffsetApplied": true,
+              "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_44TKM_20200716_3_L2A",
+              "inputs": {
+                "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2020/7/S2A_44TKM_20200716_3_L2A/SCL.tif",
+                "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2020/7/S2A_44TKM_20200716_3_L2A/B03.tif",
+                "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2020/7/S2A_44TKM_20200716_3_L2A/B08.tif",
+                "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2020/7/S2A_44TKM_20200716_3_L2A/B11.tif",
+                "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2020/7/S2A_44TKM_20200716_3_L2A/B04.tif",
+                "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2020/7/S2A_44TKM_20200716_3_L2A/B02.tif"
+              },
+              "areaKm2": 3.8775,
+              "quality": {
+                "waterPixels": 38775,
+                "validFraction": 0.95022,
+                "unknownKm2": 0.2389,
+                "lowKm2": 3.8614,
+                "highKm2": 4.2248,
+                "sclWaterPixels": 40679,
+                "sclOverlap": 0.8539,
+                "touchesBasinEdge": false,
+                "review": "Reviewed against the visible basin. Glacier-proximal masking and mixed pixels affect the eastern margin.",
+                "status": "Reviewed"
+              },
+              "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+              "grid": {
+                "crs": "EPSG:32644",
+                "bounds": [
+                  268070,
+                  4639970,
+                  274080,
+                  4645980
+                ],
+                "size": 601,
+                "pixelMetres": 10
+              },
+              "files": {
+                "image": "data/petrov/S2A_44TKM_20200716_3_L2A.webp",
+                "overlay": "data/petrov/S2A_44TKM_20200716_3_L2A.png",
+                "boundary": "data/petrov/S2A_44TKM_20200716_3_L2A.geojson",
+                "mask": "data/petrov/S2A_44TKM_20200716_3_L2A.tif"
+              }
+            },
+            {
+              "id": "S2A_44TKM_20250712_0_L2A",
+              "lake": "petrov",
+              "datetime": "2025-07-12T05:47:40.675000Z",
+              "provider": "ESA / Copernicus via Element 84 Earth Search",
+              "satellite": "Sentinel-2A",
+              "instrument": "MSI",
+              "product": "Sentinel-2 L2A surface reflectance",
+              "collection": "sentinel-2-l2a",
+              "granule": "S2A_MSIL2A_20250712T054251_N0511_R005_T44TKM_20250712T085313.SAFE",
+              "safeProduct": "S2A_MSIL2A_20250712T054251_N0511_R005_T44TKM_20250712T085313.SAFE",
+              "baseline": "05.11",
+              "boaOffsetApplied": true,
+              "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_44TKM_20250712_0_L2A",
+              "inputs": {
+                "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2025/7/S2A_44TKM_20250712_0_L2A/SCL.tif",
+                "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2025/7/S2A_44TKM_20250712_0_L2A/B03.tif",
+                "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2025/7/S2A_44TKM_20250712_0_L2A/B08.tif",
+                "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2025/7/S2A_44TKM_20250712_0_L2A/B11.tif",
+                "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2025/7/S2A_44TKM_20250712_0_L2A/B04.tif",
+                "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2025/7/S2A_44TKM_20250712_0_L2A/B02.tif"
+              },
+              "areaKm2": 4.2899,
+              "quality": {
+                "waterPixels": 42899,
+                "validFraction": 0.95026,
+                "unknownKm2": 0.2487,
+                "lowKm2": 4.0313,
+                "highKm2": 4.557,
+                "sclWaterPixels": 43993,
+                "sclOverlap": 0.9403,
+                "touchesBasinEdge": false,
+                "review": "Reviewed against the visible water edge. Floating material and bright near-shore pixels influence the sensitivity range.",
+                "status": "Reviewed"
+              },
+              "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+              "grid": {
+                "crs": "EPSG:32644",
+                "bounds": [
+                  268070,
+                  4639970,
+                  274080,
+                  4645980
+                ],
+                "size": 601,
+                "pixelMetres": 10
+              },
+              "files": {
+                "image": "data/petrov/S2A_44TKM_20250712_0_L2A.webp",
+                "overlay": "data/petrov/S2A_44TKM_20250712_0_L2A.png",
+                "boundary": "data/petrov/S2A_44TKM_20250712_0_L2A.geojson",
+                "mask": "data/petrov/S2A_44TKM_20250712_0_L2A.tif"
+              }
+            },
+            {
+              "id": "S2A_44TKM_20260727_0_L2A",
+              "lake": "petrov",
+              "datetime": "2026-07-27T05:47:39.329000Z",
+              "provider": "ESA / Copernicus via Element 84 Earth Search",
+              "satellite": "Sentinel-2A",
+              "instrument": "MSI",
+              "product": "Sentinel-2 L2A surface reflectance",
+              "collection": "sentinel-2-l2a",
+              "granule": "S2A_MSIL2A_20260727T054251_N0512_R005_T44TKM_20260727T085910.SAFE",
+              "safeProduct": "S2A_MSIL2A_20260727T054251_N0512_R005_T44TKM_20260727T085910.SAFE",
+              "baseline": "05.12",
+              "boaOffsetApplied": true,
+              "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_44TKM_20260727_0_L2A",
+              "inputs": {
+                "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/7/S2A_44TKM_20260727_0_L2A/SCL.tif",
+                "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/7/S2A_44TKM_20260727_0_L2A/B03.tif",
+                "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/7/S2A_44TKM_20260727_0_L2A/B08.tif",
+                "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/7/S2A_44TKM_20260727_0_L2A/B11.tif",
+                "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/7/S2A_44TKM_20260727_0_L2A/B04.tif",
+                "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2026/7/S2A_44TKM_20260727_0_L2A/B02.tif"
+              },
+              "areaKm2": 4.0479,
+              "quality": {
+                "waterPixels": 40479,
+                "validFraction": 0.98375,
+                "unknownKm2": 0.0789,
+                "lowKm2": 4.0293,
+                "highKm2": 4.2792,
+                "sclWaterPixels": 47050,
+                "sclOverlap": 0.9613,
+                "touchesBasinEdge": false,
+                "review": "Reviewed on the native multispectral subset. Masked pixels near the glacier margin contribute to the upper sensitivity bound.",
+                "status": "Reviewed"
+              },
+              "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+              "grid": {
+                "crs": "EPSG:32644",
+                "bounds": [
+                  268070,
+                  4639970,
+                  274080,
+                  4645980
+                ],
+                "size": 601,
+                "pixelMetres": 10
+              },
+              "files": {
+                "image": "data/petrov/S2A_44TKM_20260727_0_L2A.webp",
+                "overlay": "data/petrov/S2A_44TKM_20260727_0_L2A.png",
+                "boundary": "data/petrov/S2A_44TKM_20260727_0_L2A.geojson",
+                "mask": "data/petrov/S2A_44TKM_20260727_0_L2A.tif"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alakol",
+      "name": "Lake Ala-Kol",
+      "region": "Teskey Range",
+      "lon": 78.53466,
+      "lat": 42.31717,
+      "radius": 2000,
+      "rank": "reserve",
+      "reference": "https://doi.org/10.1016/j.palaeo.2020.109987",
+      "context": "A glacier-fed high-altitude lake. Sediment cores record past fluctuations of the upstream glacier and local climate.",
+      "extent": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.55963649576238,
+              42.29964154933074
+            ],
+            [
+              78.55824112469176,
+              42.33572344217613
+            ],
+            [
+              78.50961035416925,
+              42.33467691746417
+            ],
+            [
+              78.51103344655688,
+              42.29859633885154
+            ],
+            [
+              78.55963649576238,
+              42.29964154933074
+            ]
+          ]
+        ]
+      },
+      "series": [
+        {
+          "key": "optical",
+          "defaultDates": [
+            "S2B_43TGH_20240809_0_L2A",
+            "S2B_43TGH_20260829_0_L2A"
+          ],
+          "observations": [
+            {
+              "id": "S2B_44TKM_20170727_0_L2A",
+              "lake": "alakol",
+              "datetime": "2017-07-27T05:38:54.945000Z",
+              "provider": "ESA / Copernicus via Element 84 Earth Search",
+              "satellite": "Sentinel-2B",
+              "instrument": "MSI",
+              "product": "Sentinel-2 L2A surface reflectance",
+              "collection": "sentinel-2-l2a",
+              "granule": "S2B_OPER_MSI_L2A_TL_SHIT_20200331T012610_A002033_T44TKM_N00.01",
+              "safeProduct": "S2B_MSIL2A_20170727T053639_N0001_R005_T44TKM_20200331T012607.SAFE",
+              "baseline": "00.01",
+              "boaOffsetApplied": false,
+              "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_44TKM_20170727_0_L2A",
+              "inputs": {
+                "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2017/7/S2B_44TKM_20170727_0_L2A/SCL.tif",
+                "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2017/7/S2B_44TKM_20170727_0_L2A/B03.tif",
+                "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2017/7/S2B_44TKM_20170727_0_L2A/B08.tif",
+                "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2017/7/S2B_44TKM_20170727_0_L2A/B11.tif",
+                "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2017/7/S2B_44TKM_20170727_0_L2A/B04.tif",
+                "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/44/T/KM/2017/7/S2B_44TKM_20170727_0_L2A/B02.tif"
+              },
+              "areaKm2": 1.2002,
+              "quality": {
+                "waterPixels": 12002,
+                "validFraction": 0.91639,
+                "unknownKm2": 0.1199,
+                "lowKm2": 1.1865,
+                "highKm2": 1.3309,
+                "sclWaterPixels": 12595,
+                "sclOverlap": 0.9995,
+                "touchesBasinEdge": false,
+                "review": "The visible connected lake is retained with a coverage limitation. Local masking leaves part of the lake and shoreline check unobserved.",
+                "status": "Coverage-limited"
+              },
+              "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+              "grid": {
+                "crs": "EPSG:32644",
+                "bounds": [
+                  294830,
+                  4685930,
+                  298840,
+                  4689940
+                ],
+                "size": 401,
+                "pixelMetres": 10
+              },
+              "files": {
+                "image": "data/alakol/S2B_44TKM_20170727_0_L2A.webp",
+                "overlay": "data/alakol/S2B_44TKM_20170727_0_L2A.png",
+                "boundary": "data/alakol/S2B_44TKM_20170727_0_L2A.geojson",
+                "mask": "data/alakol/S2B_44TKM_20170727_0_L2A.tif"
+              }
+            },
+            {
+              "id": "S2B_43TGH_20240809_0_L2A",
+              "lake": "alakol",
+              "datetime": "2024-08-09T05:47:10.686000Z",
+              "provider": "ESA / Copernicus via Element 84 Earth Search",
+              "satellite": "Sentinel-2B",
+              "instrument": "MSI",
+              "product": "Sentinel-2 L2A surface reflectance",
+              "collection": "sentinel-2-l2a",
+              "granule": "S2B_OPER_MSI_L2A_TL_2BPS_20240809T094816_A038784_T43TGH_N05.11",
+              "safeProduct": "S2B_MSIL2A_20240809T053649_N0511_R005_T43TGH_20240809T094816.SAFE",
+              "baseline": "05.11",
+              "boaOffsetApplied": true,
+              "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_43TGH_20240809_0_L2A",
+              "inputs": {
+                "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2024/8/S2B_43TGH_20240809_0_L2A/SCL.tif",
+                "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2024/8/S2B_43TGH_20240809_0_L2A/B03.tif",
+                "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2024/8/S2B_43TGH_20240809_0_L2A/B08.tif",
+                "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2024/8/S2B_43TGH_20240809_0_L2A/B11.tif",
+                "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2024/8/S2B_43TGH_20240809_0_L2A/B04.tif",
+                "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2024/8/S2B_43TGH_20240809_0_L2A/B02.tif"
+              },
+              "areaKm2": 1.2068,
+              "quality": {
+                "waterPixels": 12068,
+                "validFraction": 0.91632,
+                "unknownKm2": 0.119,
+                "lowKm2": 1.2015,
+                "highKm2": 1.3299,
+                "sclWaterPixels": 12091,
+                "sclOverlap": 0.9878,
+                "touchesBasinEdge": false,
+                "review": "Coverage-limited estimate. The visible lake outline agrees with the RGB image. Unobserved pixels widen its sensitivity range.",
+                "status": "Coverage-limited"
+              },
+              "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+              "grid": {
+                "crs": "EPSG:32644",
+                "bounds": [
+                  294830,
+                  4685930,
+                  298840,
+                  4689940
+                ],
+                "size": 401,
+                "pixelMetres": 10
+              },
+              "files": {
+                "image": "data/alakol/S2B_43TGH_20240809_0_L2A.webp",
+                "overlay": "data/alakol/S2B_43TGH_20240809_0_L2A.png",
+                "boundary": "data/alakol/S2B_43TGH_20240809_0_L2A.geojson",
+                "mask": "data/alakol/S2B_43TGH_20240809_0_L2A.tif"
+              }
+            },
+            {
+              "id": "S2B_43TGH_20260829_0_L2A",
+              "lake": "alakol",
+              "datetime": "2026-08-29T05:47:03.892000Z",
+              "provider": "ESA / Copernicus via Element 84 Earth Search",
+              "satellite": "Sentinel-2B",
+              "instrument": "MSI",
+              "product": "Sentinel-2 L2A surface reflectance",
+              "collection": "sentinel-2-l2a",
+              "granule": "S2B_MSIL2A_20260829T053639_N0512_R005_T43TGH_20260829T091959.SAFE",
+              "safeProduct": "S2B_MSIL2A_20260829T053639_N0512_R005_T43TGH_20260829T091959.SAFE",
+              "baseline": "05.12",
+              "boaOffsetApplied": true,
+              "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_43TGH_20260829_0_L2A",
+              "inputs": {
+                "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2026/8/S2B_43TGH_20260829_0_L2A/SCL.tif",
+                "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2026/8/S2B_43TGH_20260829_0_L2A/B03.tif",
+                "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2026/8/S2B_43TGH_20260829_0_L2A/B08.tif",
+                "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2026/8/S2B_43TGH_20260829_0_L2A/B11.tif",
+                "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2026/8/S2B_43TGH_20260829_0_L2A/B04.tif",
+                "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/GH/2026/8/S2B_43TGH_20260829_0_L2A/B02.tif"
+              },
+              "areaKm2": 1.1922,
+              "quality": {
+                "waterPixels": 11922,
+                "validFraction": 0.91296,
+                "unknownKm2": 0.1225,
+                "lowKm2": 1.1849,
+                "highKm2": 1.3222,
+                "sclWaterPixels": 11719,
+                "sclOverlap": 0.9594,
+                "touchesBasinEdge": false,
+                "review": "Coverage-limited estimate. The connected outline is visible in RGB and adjacent areas outside coverage are masked.",
+                "status": "Coverage-limited"
+              },
+              "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+              "grid": {
+                "crs": "EPSG:32644",
+                "bounds": [
+                  294830,
+                  4685930,
+                  298840,
+                  4689940
+                ],
+                "size": 401,
+                "pixelMetres": 10
+              },
+              "files": {
+                "image": "data/alakol/S2B_43TGH_20260829_0_L2A.webp",
+                "overlay": "data/alakol/S2B_43TGH_20260829_0_L2A.png",
+                "boundary": "data/alakol/S2B_43TGH_20260829_0_L2A.geojson",
+                "mask": "data/alakol/S2B_43TGH_20260829_0_L2A.tif"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adygine2",
+      "name": "Adygine Lake 2",
+      "region": "Ala-Archa",
+      "lon": 74.43667,
+      "lat": 42.51175,
+      "radius": 470,
+      "buffer": 85,
+      "rank": "reserve",
+      "reference": "https://esurf.copernicus.org/articles/7/301/2019/",
+      "context": "The largest lake in the Adygine cascade lost direct contact with the retreating glacier in the 1990s. Field monitoring documents the role of its surface outlet.",
+      "extent": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.44252659025832,
+              42.50753221623758
+            ],
+            [
+              74.44245055450516,
+              42.51608737851182
+            ],
+            [
+              74.43088621342218,
+              42.5160305326026
+            ],
+            [
+              74.43096382605594,
+              42.50747538725247
+            ],
+            [
+              74.44252659025832,
+              42.50753221623758
+            ]
+          ]
+        ]
+      },
+      "series": [
+        {
+          "key": "optical",
+          "defaultDates": [
+            "S2A_43TDH_20240820_0_L2A",
+            "S2C_43TDH_20260817_0_L2A"
+          ],
+          "observations": [
+            {
+              "id": "S2A_43TDH_20240820_0_L2A",
+              "lake": "adygine2",
+              "datetime": "2024-08-20T06:07:09.216000Z",
+              "provider": "ESA / Copernicus via Element 84 Earth Search",
+              "satellite": "Sentinel-2A",
+              "instrument": "MSI",
+              "product": "Sentinel-2 L2A surface reflectance",
+              "collection": "sentinel-2-l2a",
+              "granule": "S2A_OPER_MSI_L2A_TL_2APS_20240820T102355_A047850_T43TDH_N05.11",
+              "safeProduct": "S2A_MSIL2A_20240820T055631_N0511_R091_T43TDH_20240820T102355.SAFE",
+              "baseline": "05.11",
+              "boaOffsetApplied": true,
+              "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_43TDH_20240820_0_L2A",
+              "inputs": {
+                "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2024/8/S2A_43TDH_20240820_0_L2A/SCL.tif",
+                "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2024/8/S2A_43TDH_20240820_0_L2A/B03.tif",
+                "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2024/8/S2A_43TDH_20240820_0_L2A/B08.tif",
+                "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2024/8/S2A_43TDH_20240820_0_L2A/B11.tif",
+                "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2024/8/S2A_43TDH_20240820_0_L2A/B04.tif",
+                "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2024/8/S2A_43TDH_20240820_0_L2A/B02.tif"
+              },
+              "areaKm2": 0.0334,
+              "quality": {
+                "waterPixels": 334,
+                "validFraction": 1.0,
+                "unknownKm2": 0.0,
+                "lowKm2": 0.0308,
+                "highKm2": 0.0345,
+                "sclWaterPixels": 184,
+                "sclOverlap": 0.5509,
+                "touchesBasinEdge": false,
+                "review": "The outline agrees with the visible basin and the independent field and inventory footprint. The 20 m SWIR band mixes some shoreline pixels.",
+                "status": "Reviewed"
+              },
+              "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+              "grid": {
+                "crs": "EPSG:32643",
+                "bounds": [
+                  453250,
+                  4706280,
+                  454200,
+                  4707230
+                ],
+                "size": 95,
+                "pixelMetres": 10
+              },
+              "files": {
+                "image": "data/adygine2/S2A_43TDH_20240820_0_L2A.webp",
+                "overlay": "data/adygine2/S2A_43TDH_20240820_0_L2A.png",
+                "boundary": "data/adygine2/S2A_43TDH_20240820_0_L2A.geojson",
+                "mask": "data/adygine2/S2A_43TDH_20240820_0_L2A.tif"
+              }
+            },
+            {
+              "id": "S2B_43TDH_20250810_0_L2A",
+              "lake": "adygine2",
+              "datetime": "2025-08-10T06:07:12.323000Z",
+              "provider": "ESA / Copernicus via Element 84 Earth Search",
+              "satellite": "Sentinel-2B",
+              "instrument": "MSI",
+              "product": "Sentinel-2 L2A surface reflectance",
+              "collection": "sentinel-2-l2a",
+              "granule": "S2B_MSIL2A_20250810T055639_N0511_R091_T43TDH_20250810T080656.SAFE",
+              "safeProduct": "S2B_MSIL2A_20250810T055639_N0511_R091_T43TDH_20250810T080656.SAFE",
+              "baseline": "05.11",
+              "boaOffsetApplied": true,
+              "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_43TDH_20250810_0_L2A",
+              "inputs": {
+                "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2025/8/S2B_43TDH_20250810_0_L2A/SCL.tif",
+                "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2025/8/S2B_43TDH_20250810_0_L2A/B03.tif",
+                "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2025/8/S2B_43TDH_20250810_0_L2A/B08.tif",
+                "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2025/8/S2B_43TDH_20250810_0_L2A/B11.tif",
+                "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2025/8/S2B_43TDH_20250810_0_L2A/B04.tif",
+                "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2025/8/S2B_43TDH_20250810_0_L2A/B02.tif"
+              },
+              "areaKm2": 0.0343,
+              "quality": {
+                "waterPixels": 343,
+                "validFraction": 1.0,
+                "unknownKm2": 0.0,
+                "lowKm2": 0.0324,
+                "highKm2": 0.0349,
+                "sclWaterPixels": 200,
+                "sclOverlap": 0.5831,
+                "touchesBasinEdge": false,
+                "review": "Visually reviewed. Shoreline mixtures and the resampled SWIR band limit sensitivity on this small lake.",
+                "status": "Reviewed"
+              },
+              "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+              "grid": {
+                "crs": "EPSG:32643",
+                "bounds": [
+                  453250,
+                  4706280,
+                  454200,
+                  4707230
+                ],
+                "size": 95,
+                "pixelMetres": 10
+              },
+              "files": {
+                "image": "data/adygine2/S2B_43TDH_20250810_0_L2A.webp",
+                "overlay": "data/adygine2/S2B_43TDH_20250810_0_L2A.png",
+                "boundary": "data/adygine2/S2B_43TDH_20250810_0_L2A.geojson",
+                "mask": "data/adygine2/S2B_43TDH_20250810_0_L2A.tif"
+              }
+            },
+            {
+              "id": "S2C_43TDH_20260817_0_L2A",
+              "lake": "adygine2",
+              "datetime": "2026-08-17T05:57:16.360000Z",
+              "provider": "ESA / Copernicus via Element 84 Earth Search",
+              "satellite": "Sentinel-2C",
+              "instrument": "MSI",
+              "product": "Sentinel-2 L2A surface reflectance",
+              "collection": "sentinel-2-l2a",
+              "granule": "S2C_MSIL2A_20260817T054631_N0512_R048_T43TDH_20260817T085418.SAFE",
+              "safeProduct": "S2C_MSIL2A_20260817T054631_N0512_R048_T43TDH_20260817T085418.SAFE",
+              "baseline": "05.12",
+              "boaOffsetApplied": true,
+              "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_43TDH_20260817_0_L2A",
+              "inputs": {
+                "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2026/8/S2C_43TDH_20260817_0_L2A/SCL.tif",
+                "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2026/8/S2C_43TDH_20260817_0_L2A/B03.tif",
+                "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2026/8/S2C_43TDH_20260817_0_L2A/B08.tif",
+                "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2026/8/S2C_43TDH_20260817_0_L2A/B11.tif",
+                "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2026/8/S2C_43TDH_20260817_0_L2A/B04.tif",
+                "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2026/8/S2C_43TDH_20260817_0_L2A/B02.tif"
+              },
+              "areaKm2": 0.0333,
+              "quality": {
+                "waterPixels": 333,
+                "validFraction": 1.0,
+                "unknownKm2": 0.0,
+                "lowKm2": 0.0316,
+                "highKm2": 0.0345,
+                "sclWaterPixels": 220,
+                "sclOverlap": 0.6607,
+                "touchesBasinEdge": false,
+                "review": "Visually reviewed against RGB and the documented Lake 2 basin. Most of the confirmed boundary is stable across tested thresholds.",
+                "status": "Reviewed"
+              },
+              "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+              "grid": {
+                "crs": "EPSG:32643",
+                "bounds": [
+                  453250,
+                  4706280,
+                  454200,
+                  4707230
+                ],
+                "size": 95,
+                "pixelMetres": 10
+              },
+              "files": {
+                "image": "data/adygine2/S2C_43TDH_20260817_0_L2A.webp",
+                "overlay": "data/adygine2/S2C_43TDH_20260817_0_L2A.png",
+                "boundary": "data/adygine2/S2C_43TDH_20260817_0_L2A.geojson",
+                "mask": "data/adygine2/S2C_43TDH_20260817_0_L2A.tif"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adygine3",
+      "name": "Adygine Lake 3",
+      "region": "Ala-Archa",
+      "lon": 74.44114,
+      "lat": 42.50921,
+      "radius": 470,
+      "buffer": 100,
+      "rank": "reserve",
+      "reference": "https://esurf.copernicus.org/articles/7/301/2019/",
+      "context": "The upper proglacial lake of the Adygine cascade formed after glacier retreat in 2005. Field observations track its development and connection with the downstream lakes.",
+      "extent": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.44693129996884,
+              42.504941866293585
+            ],
+            [
+              74.44685587180629,
+              42.513497038836434
+            ],
+            [
+              74.43529199952523,
+              42.51344064023367
+            ],
+            [
+              74.43536900436519,
+              42.50488548448192
+            ],
+            [
+              74.44693129996884,
+              42.504941866293585
+            ]
+          ]
+        ]
+      },
+      "series": [
+        {
+          "key": "optical",
+          "defaultDates": [
+            "S2A_43TDH_20240827_0_L2A",
+            "S2B_43TDH_20260914_0_L2A"
+          ],
+          "observations": [
+            {
+              "id": "S2A_43TDH_20240827_0_L2A",
+              "lake": "adygine3",
+              "datetime": "2024-08-27T05:57:11.441000Z",
+              "provider": "ESA / Copernicus via Element 84 Earth Search",
+              "satellite": "Sentinel-2A",
+              "instrument": "MSI",
+              "product": "Sentinel-2 L2A surface reflectance",
+              "collection": "sentinel-2-l2a",
+              "granule": "S2A_OPER_MSI_L2A_TL_2APS_20240827T104448_A047950_T43TDH_N05.11",
+              "safeProduct": "S2A_MSIL2A_20240827T054631_N0511_R048_T43TDH_20240827T104448.SAFE",
+              "baseline": "05.11",
+              "boaOffsetApplied": true,
+              "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_43TDH_20240827_0_L2A",
+              "inputs": {
+                "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2024/8/S2A_43TDH_20240827_0_L2A/SCL.tif",
+                "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2024/8/S2A_43TDH_20240827_0_L2A/B03.tif",
+                "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2024/8/S2A_43TDH_20240827_0_L2A/B08.tif",
+                "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2024/8/S2A_43TDH_20240827_0_L2A/B11.tif",
+                "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2024/8/S2A_43TDH_20240827_0_L2A/B04.tif",
+                "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2024/8/S2A_43TDH_20240827_0_L2A/B02.tif"
+              },
+              "areaKm2": 0.026,
+              "quality": {
+                "waterPixels": 260,
+                "validFraction": 0.99129,
+                "unknownKm2": 0.0004,
+                "lowKm2": 0.0254,
+                "highKm2": 0.027,
+                "sclWaterPixels": 164,
+                "sclOverlap": 0.6308,
+                "touchesBasinEdge": false,
+                "review": "Visually reviewed. The index-derived extent follows the separate glacier-contact basin on the field map.",
+                "status": "Reviewed"
+              },
+              "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+              "grid": {
+                "crs": "EPSG:32643",
+                "bounds": [
+                  453610,
+                  4705990,
+                  454560,
+                  4706940
+                ],
+                "size": 95,
+                "pixelMetres": 10
+              },
+              "files": {
+                "image": "data/adygine3/S2A_43TDH_20240827_0_L2A.webp",
+                "overlay": "data/adygine3/S2A_43TDH_20240827_0_L2A.png",
+                "boundary": "data/adygine3/S2A_43TDH_20240827_0_L2A.geojson",
+                "mask": "data/adygine3/S2A_43TDH_20240827_0_L2A.tif"
+              }
+            },
+            {
+              "id": "S2B_43TDH_20250830_0_L2A",
+              "lake": "adygine3",
+              "datetime": "2025-08-30T06:07:11.284000Z",
+              "provider": "ESA / Copernicus via Element 84 Earth Search",
+              "satellite": "Sentinel-2B",
+              "instrument": "MSI",
+              "product": "Sentinel-2 L2A surface reflectance",
+              "collection": "sentinel-2-l2a",
+              "granule": "S2B_MSIL2A_20250830T055639_N0511_R091_T43TDH_20250830T081340.SAFE",
+              "safeProduct": "S2B_MSIL2A_20250830T055639_N0511_R091_T43TDH_20250830T081340.SAFE",
+              "baseline": "05.11",
+              "boaOffsetApplied": true,
+              "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_43TDH_20250830_0_L2A",
+              "inputs": {
+                "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2025/8/S2B_43TDH_20250830_0_L2A/SCL.tif",
+                "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2025/8/S2B_43TDH_20250830_0_L2A/B03.tif",
+                "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2025/8/S2B_43TDH_20250830_0_L2A/B08.tif",
+                "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2025/8/S2B_43TDH_20250830_0_L2A/B11.tif",
+                "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2025/8/S2B_43TDH_20250830_0_L2A/B04.tif",
+                "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2025/8/S2B_43TDH_20250830_0_L2A/B02.tif"
+              },
+              "areaKm2": 0.0263,
+              "quality": {
+                "waterPixels": 263,
+                "validFraction": 0.99136,
+                "unknownKm2": 0.0004,
+                "lowKm2": 0.0251,
+                "highKm2": 0.0275,
+                "sclWaterPixels": 160,
+                "sclOverlap": 0.6084,
+                "touchesBasinEdge": false,
+                "review": "RGB confirms the connected lake. The small basin and mixed edge pixels limit precision.",
+                "status": "Reviewed"
+              },
+              "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+              "grid": {
+                "crs": "EPSG:32643",
+                "bounds": [
+                  453610,
+                  4705990,
+                  454560,
+                  4706940
+                ],
+                "size": 95,
+                "pixelMetres": 10
+              },
+              "files": {
+                "image": "data/adygine3/S2B_43TDH_20250830_0_L2A.webp",
+                "overlay": "data/adygine3/S2B_43TDH_20250830_0_L2A.png",
+                "boundary": "data/adygine3/S2B_43TDH_20250830_0_L2A.geojson",
+                "mask": "data/adygine3/S2B_43TDH_20250830_0_L2A.tif"
+              }
+            },
+            {
+              "id": "S2B_43TDH_20260914_0_L2A",
+              "lake": "adygine3",
+              "datetime": "2026-09-14T06:07:08.120000Z",
+              "provider": "ESA / Copernicus via Element 84 Earth Search",
+              "satellite": "Sentinel-2B",
+              "instrument": "MSI",
+              "product": "Sentinel-2 L2A surface reflectance",
+              "collection": "sentinel-2-l2a",
+              "granule": "S2B_MSIL2A_20260914T055629_N0512_R091_T43TDH_20260914T093941.SAFE",
+              "safeProduct": "S2B_MSIL2A_20260914T055629_N0512_R091_T43TDH_20260914T093941.SAFE",
+              "baseline": "05.12",
+              "boaOffsetApplied": true,
+              "source": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_43TDH_20260914_0_L2A",
+              "inputs": {
+                "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2026/9/S2B_43TDH_20260914_0_L2A/SCL.tif",
+                "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2026/9/S2B_43TDH_20260914_0_L2A/B03.tif",
+                "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2026/9/S2B_43TDH_20260914_0_L2A/B08.tif",
+                "swir16": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2026/9/S2B_43TDH_20260914_0_L2A/B11.tif",
+                "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2026/9/S2B_43TDH_20260914_0_L2A/B04.tif",
+                "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/T/DH/2026/9/S2B_43TDH_20260914_0_L2A/B02.tif"
+              },
+              "areaKm2": 0.0261,
+              "quality": {
+                "waterPixels": 261,
+                "validFraction": 0.99125,
+                "unknownKm2": 0.0004,
+                "lowKm2": 0.0256,
+                "highKm2": 0.0268,
+                "sclWaterPixels": 156,
+                "sclOverlap": 0.5977,
+                "touchesBasinEdge": false,
+                "review": "Visually reviewed. Pixels excluded near the shore are represented in the upper sensitivity bound.",
+                "status": "Reviewed"
+              },
+              "method": "NDWI > 0.06, MNDWI > 0.18, NIR < 0.16, clear SCL classes and basin connectivity",
+              "grid": {
+                "crs": "EPSG:32643",
+                "bounds": [
+                  453610,
+                  4705990,
+                  454560,
+                  4706940
+                ],
+                "size": 95,
+                "pixelMetres": 10
+              },
+              "files": {
+                "image": "data/adygine3/S2B_43TDH_20260914_0_L2A.webp",
+                "overlay": "data/adygine3/S2B_43TDH_20260914_0_L2A.png",
+                "boundary": "data/adygine3/S2B_43TDH_20260914_0_L2A.geojson",
+                "mask": "data/adygine3/S2B_43TDH_20260914_0_L2A.tif"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
