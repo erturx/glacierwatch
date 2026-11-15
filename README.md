@@ -12,7 +12,7 @@ GlacierWatch lets researchers and judges inspect satellite observations of a lak
 - **Petrov Lake**, a moraine-dammed lake in Ak-Shyirak. Inspect same-track NASA–ISRO NISAR observations and a separate Sentinel-2 optical series.
 - **Lake Ala-Kol**, a glacier-fed lake in the Teskey Range. A historical optical view is available from 2017. Some shore pixels are excluded and the coverage limitation is shown with each estimate.
 
-Choose a reviewed acquisition, toggle the water outline and open the source record. The split view is available for pairs with complete lake and shoreline coverage and a reduction beyond the sensitivity ranges. Published drainage studies explain how large reductions have been interpreted at Toguz-Bulak and Korumdu. The public viewer uses precomputed assets and requires no NASA account.
+Choose two reviewed acquisitions from a lake's radar or optical series. Drag the split line or use the slider to compare the scenes. The viewer shows the area estimates and their difference alongside coverage and sensitivity notes. The Batken pair qualifies as a verified decrease. Published drainage studies explain how large reductions have been interpreted at Toguz-Bulak and Korumdu. The public viewer uses precomputed assets and requires no NASA account.
 
 ## NISAR result
 

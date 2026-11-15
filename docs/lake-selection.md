@@ -1,6 +1,6 @@
 # Lake selection
 
-The public inventory contains three Kyrgyz lakes. The Batken basin has a verified before-and-after pair. Petrov Lake and Lake Ala-Kol have separately browsable observations. The candidate file also records the reserves from the original screening.
+The public inventory contains three Kyrgyz lakes with dates that can be compared in the split viewer. The Batken pair qualifies as a verified decrease. For Petrov Lake and Lake Ala-Kol, the viewer reports the measured differences alongside their coverage and sensitivity limits. The candidate file also records the reserves from the original screening.
 
 | Candidate | Screening outcome |
 | --- | --- |
@@ -19,7 +19,7 @@ The 2024 inventory geometry is used to review identity and location. Its publish
 
 ## Follow-up screening for visible lake shrinkage
 
-The interactive comparison now requires complete usable coverage and a substantial reduction outside the tested sensitivity ranges. The prior screen recorded suitability for estimating open-water area on individual dates.
+To qualify as a verified decrease, a comparison requires complete usable coverage and a substantial reduction outside the tested sensitivity ranges. The prior screen recorded suitability for estimating open-water area on individual dates.
 
 | Candidate | Follow-up evidence |
 | --- | --- |

@@ -177,8 +177,7 @@ function chooseLake(id) {
 
 function chooseSeries(entry) {
   series = entry;
-  const preferred = entry.comparisons.find(([a,b]) => a === entry.defaultDates[0] && b === entry.defaultDates[1]);
-  [dateA, dateB] = preferred ?? entry.comparisons[0] ?? [entry.observations.at(-1).id, null];
+  [dateA, dateB] = entry.defaultDates;
   for (const button of $('series').querySelectorAll('button')) {
     button.setAttribute('aria-pressed', String(button.dataset.series === entry.key));
   }
@@ -250,41 +249,32 @@ function sourceBox(observation, tag, precision) {
 
 function renderComparison() {
   const list = series.observations;
-  const compared = series.comparisons.length > 0;
-  const availableA = compared ? list.filter(obs => series.comparisons.some(([id]) => id === obs.id)) : list;
-  const allowedB = series.comparisons.filter(([a]) => a === dateA).map(([, b]) => b);
-  if (!allowedB.includes(dateB)) dateB = allowedB[0] ?? null;
-  options($('date-a'), availableA, dateA);
-  options($('date-b'), list.filter(obs => allowedB.includes(obs.id)), dateB);
-  for (const id of ['date-b-control', 'scene-b', 'stamp-b', 'divider', 'wipe', 'wipe-a-label', 'wipe-b-label']) {
-    $(id).hidden = !compared;
-  }
-  for (const id of ['area-b', 'area-change', 'relative-change']) $(id).parentElement.hidden = !compared;
-  for (const id of ['scene', 'metrics', 'figure-controls']) $(id).classList.toggle('single', !compared);
-  $('date-a-label').textContent = compared ? 'Observation A' : 'Observation date';
-  $('area-a-label').textContent = compared ? 'Water at A' : 'Open water';
+  const later = list.slice(list.findIndex(obs => obs.id === dateA) + 1);
+  if (!later.some(obs => obs.id === dateB)) dateB = later[0].id;
+  options($('date-a'), list.slice(0,-1), dateA);
+  options($('date-b'), later, dateB);
   const [a,b] = pair();
   for (const [key, obs] of [['a', a], ['b', b]]) {
-    if (!obs) continue;
     $(`image-${key}`).src = obs.files.image;
     $(`image-${key}`).alt = `${lake.name} on ${formattedDate(obs.datetime)}, ${obs.satellite}`;
     $(`overlay-${key}`).src = obs.files.overlay;
-    $(`stamp-${key}`).textContent = `${compared ? key.toUpperCase() + ' · ' : ''}${formattedDate(obs.datetime)}`;
+    $(`stamp-${key}`).textContent = `${key.toUpperCase()} · ${formattedDate(obs.datetime)}`;
   }
-  const digits = Math.max(a.areaKm2, b?.areaKm2 ?? 0) < .1 ? 4 : 2;
+  const delta = b.areaKm2 - a.areaKm2;
+  const digits = Math.max(a.areaKm2, b.areaKm2) < .1 || Math.abs(delta) < .1 ? 4 : 2;
   metric('area-a', formatArea(a.areaKm2, false, digits), 'km²');
-  if (b) {
-    const delta = b.areaKm2 - a.areaKm2;
-    metric('area-b', formatArea(b.areaKm2, false, digits), 'km²');
-    metric('area-change', formatArea(delta, true, digits), 'km²');
-    metric('relative-change', formatArea(100 * delta / a.areaKm2, true, 1), '%');
-    const interval = Math.round((Date.parse(b.datetime) - Date.parse(a.datetime)) / 86_400_000);
-    const seasonGap = Math.abs(Date.parse(`2000-${b.datetime.slice(5,10)}`) - Date.parse(`2000-${a.datetime.slice(5,10)}`));
-    $('quality').textContent = `${interval} days between scenes. Both observations have full coverage of the reviewed lake and shoreline. The decrease exceeds the tested sensitivity range.${seasonGap > 21 * 86_400_000 ? ' Seasonal conditions can affect the comparison.' : ''}`;
-  } else {
-    const coverage = (a.quality.validFraction * 100).toFixed(1);
-    $('quality').textContent = `${coverage}% usable coverage of the reviewed lake and shoreline. No pair in this series met the full-coverage and substantial-decrease criteria.`;
-  }
+  metric('area-b', formatArea(b.areaKm2, false, digits), 'km²');
+  metric('area-change', formatArea(delta, true, digits), 'km²');
+  metric('relative-change', formatArea(100 * delta / a.areaKm2, true, 1), '%');
+  const interval = Math.round((Date.parse(b.datetime) - Date.parse(a.datetime)) / 86_400_000);
+  const seasonGap = Math.abs(Date.parse(`2000-${b.datetime.slice(5,10)}`) - Date.parse(`2000-${a.datetime.slice(5,10)}`));
+  const verified = series.comparisons.some(([first, second]) => first === dateA && second === dateB);
+  const rangesOverlap = a.quality.lowKm2 <= b.quality.highKm2 && b.quality.lowKm2 <= a.quality.highKm2;
+  const coverage = [a,b].map(obs => `${(obs.quality.validFraction * 100).toFixed(1)}%`);
+  const interpretation = verified
+    ? 'Both observations have full coverage of the reviewed lake and shoreline. The decrease exceeds the tested sensitivity range.'
+    : `Usable lake and shoreline coverage: A ${coverage[0]}, B ${coverage[1]}. ${rangesOverlap ? 'The sensitivity ranges overlap, so the measured difference is uncertain.' : 'The measured difference has not passed the checks for a verified decrease.'}`;
+  $('quality').textContent = `${interval} days between scenes. ${interpretation}${seasonGap > 21 * 86_400_000 ? ' Seasonal conditions can affect the comparison.' : ''}`;
   $('scale-text').textContent = `${a.grid.pixelMetres} m analysis grid`;
   const method = $('method-description');
   const link = document.createElement('a');
@@ -295,8 +285,7 @@ function renderComparison() {
   method.replaceChildren(document.createTextNode(series.key === 'radar'
     ? 'Frequency A HH backscatter from same-track NISAR observations. Invalid subswaths and low-look pixels are excluded. Radar shadow, rough water and ice can alter the signal. '
     : 'Sentinel-2 reflectance indices identify connected water within each lake basin. Scene classification excludes cloud, shadow, snow, unclassified and missing pixels. The 20 m SWIR band is resampled onto the 10 m grid. '), link);
-  $('sources').replaceChildren(sourceBox(a, b ? 'Observation A' : 'Observation', digits));
-  if (b) $('sources').append(sourceBox(b, 'Observation B', digits));
+  $('sources').replaceChildren(sourceBox(a, 'Observation A', digits), sourceBox(b, 'Observation B', digits));
   $('map').setAttribute('aria-label', 'Interactive map of Kyrgyzstan');
   renderMap();
 }
@@ -304,6 +293,18 @@ function renderComparison() {
 $('date-a').addEventListener('change', event => { dateA = event.target.value; renderComparison(); });
 $('date-b').addEventListener('change', event => { dateB = event.target.value; renderComparison(); });
 $('wipe').addEventListener('input', updateWipe);
+const scene = $('scene');
+$('divider').firstElementChild.addEventListener('pointerdown', event => {
+  if (!event.isPrimary || event.button !== 0) return;
+  event.preventDefault();
+  scene.setPointerCapture(event.pointerId);
+});
+scene.addEventListener('pointermove', event => {
+  if (!scene.hasPointerCapture(event.pointerId)) return;
+  const bounds = scene.getBoundingClientRect();
+  $('wipe').value = Math.round(100 * (event.clientX - bounds.left) / bounds.width);
+  updateWipe();
+});
 $('outline-toggle').addEventListener('change', event => {
   document.querySelectorAll('.outline').forEach(node => { node.hidden = !event.target.checked; });
 });

@@ -76,7 +76,7 @@ def main():
     flags.extend([
         "", "## Interpretation", "",
         "- NISAR's 17 August and 10 September Petrov extents differ by approximately −0.06 km². Both are compatible within the tested sensitivity ranges. Approximate shared-pixel optical agreement is 81% and 89%. Independent reference dates differ by three and eight days.",
-        "- The before-and-after viewer requires 100% eligible coverage on both dates and over the combined water outline plus its shoreline buffer. The nominal decrease must reach 0.005 km² and the conservative decrease must reach 20% of the earlier upper estimate.",
+        "- A verified decrease requires 100% eligible coverage on both dates and over the combined water outline plus its shoreline buffer. The nominal decrease must reach 0.005 km² and the conservative decrease must reach 20% of the earlier upper estimate. The viewer displays the measured difference and its limitations for each available pair.",
         "- The 10 m optical mask inherits 20 m SWIR and SCL limitations. Refer to the individual scene records for sensor availability and edge notes.",
     ])
     write("data-sources.md", ledger)

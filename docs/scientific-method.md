@@ -1,6 +1,6 @@
 # Scientific method
 
-The viewer compares only pairs on the same analysis grid with 100% eligible pixels in the individual lake and shoreline checks and in the union of both mapped outlines plus a three-pixel shoreline buffer. The nominal decrease must reach 0.005 km². The difference between the earlier lower sensitivity bound and the later upper bound must reach 20% of the earlier upper bound. These display thresholds screen out small changes. For other series, the viewer presents the observations one date at a time.
+The viewer compares two observations from the same series on a common analysis grid. A verified decrease requires 100% eligible pixels in the individual lake and shoreline checks and in the union of both mapped outlines plus a three-pixel shoreline buffer. The nominal decrease must reach 0.005 km². The difference between the earlier lower sensitivity bound and the later upper bound must reach 20% of the earlier upper bound. The viewer reports coverage and overlapping sensitivity ranges alongside the area difference.
 
 ## Observation discovery and geometry
 

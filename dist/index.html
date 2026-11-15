@@ -45,24 +45,24 @@
           <div id="series" class="segmented" aria-label="Observation series"></div>
         </div>
         <div class="date-controls">
-          <label><span><i class="dot dot-a"></i> <span id="date-a-label">Observation</span></span><select id="date-a"></select></label>
-          <label id="date-b-control" hidden><span><i class="dot dot-b"></i> Observation B</span><select id="date-b"></select></label>
+          <label><span><i class="dot dot-a"></i> Observation A</span><select id="date-a"></select></label>
+          <label><span><i class="dot dot-b"></i> Observation B</span><select id="date-b"></select></label>
         </div>
         <div class="scene" id="scene">
-          <div class="scene-layer" id="scene-b" hidden><img id="image-b" alt=""><img id="overlay-b" class="outline" alt=""></div>
+          <div class="scene-layer"><img id="image-b" alt=""><img id="overlay-b" class="outline" alt=""></div>
           <div class="scene-layer scene-a" id="scene-a"><img id="image-a" alt=""><img id="overlay-a" class="outline" alt=""></div>
           <div class="scene-label scene-label-a" id="stamp-a"></div>
-          <div class="scene-label scene-label-b" id="stamp-b" hidden></div>
-          <div id="divider" aria-hidden="true" hidden><span>‹ ›</span></div>
+          <div class="scene-label scene-label-b" id="stamp-b"></div>
+          <div id="divider" aria-hidden="true"><span>‹ ›</span></div>
           <div class="north" aria-hidden="true">↑ N</div>
         </div>
         <div class="figure-controls" id="figure-controls">
-          <label for="wipe" id="wipe-b-label" hidden>B only</label><input type="range" id="wipe" min="0" max="100" value="50" aria-label="Proportion of observation A visible" hidden><span id="wipe-a-label" hidden>A only</span>
+          <label for="wipe">B only</label><input type="range" id="wipe" min="0" max="100" value="50" aria-label="Proportion of observation A visible"><span>A only</span>
           <label class="outline-toggle"><input type="checkbox" id="outline-toggle" checked> Show outlines</label>
         </div>
         <p class="legend"><span><i class="legend-water"></i> Mapped open water</span><span><i class="legend-unknown"></i> Unobserved or excluded pixels</span><span id="scale-text"></span></p>
         <dl class="metrics" id="metrics" aria-live="polite">
-          <div><dt id="area-a-label">Open water</dt><dd id="area-a"></dd></div>
+          <div><dt>Water at A</dt><dd id="area-a"></dd></div>
           <div><dt>Water at B</dt><dd id="area-b"></dd></div>
           <div><dt>Area change</dt><dd id="area-change"></dd></div>
           <div><dt>Relative change</dt><dd id="relative-change"></dd></div>
@@ -78,7 +78,7 @@
         <hr>
         <h3>How extent is measured</h3>
         <p id="method-description"></p>
-        <p>Comparisons require full coverage of the lake and shoreline on both dates. The mapped decrease must reach 0.005 km². After accounting for threshold sensitivity, the minimum decrease must still reach 20% of the earlier upper estimate.</p>
+        <p>Drag the divider or use the slider to compare two dates from the same observation series. A verified decrease requires full lake and shoreline coverage, a mapped loss of at least 0.005 km², and a loss of at least 20% of the earlier upper estimate after accounting for threshold sensitivity.</p>
       </article>
       <article class="panel source-panel">
         <h2>Observation sources</h2>
